@@ -10,7 +10,7 @@ const MapSection = dynamic(() => import('@/components/MapSection'), {
 
 export default function Home() {
   return (
-    <div className="h-screen overflow-y-scroll snap-y snap-mandatory">
+    <div className="h-screen overflow-y-scroll snap-y snap-mandatory bg-[#F0EEDE]">
       <Navigation />
 
       {/* Section 1: Hero */}
@@ -19,7 +19,7 @@ export default function Home() {
       </section>
 
       {/* Section 2: Introduction */}
-      <section className="h-screen snap-start flex items-center justify-center p-16">
+      <section className="h-screen snap-start flex items-center justify-center p-16 overflow-hidden">
         <div className="max-w-6xl grid grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}

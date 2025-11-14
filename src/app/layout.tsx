@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Spectral } from "next/font/google";
+import { Geist, Geist_Mono, Spectral, Nunito } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,6 +18,12 @@ const spectral = Spectral({
   weight: ["400", "600", "700"],
 });
 
+const nunito = Nunito({
+  variable: "--font-nunito",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "Walnut Works",
   description: "Walnut Works Studio",
@@ -31,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${spectral.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${spectral.variable} ${nunito.variable} antialiased`}
       >
         {children}
       </body>

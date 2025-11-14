@@ -15,7 +15,7 @@ export default function About() {
       {/* Two Column Section with Independent Scrolling */}
       <section className="h-screen flex">
         {/* Left Column - Images */}
-        <div className="w-1/2 overflow-y-auto p-16 space-y-8">
+        <div className="w-1/2 overflow-y-auto p-16 space-y-8 hide-scrollbar">
           <div className="aspect-[3/4] bg-gradient-to-br from-amber-100 to-amber-300 rounded-lg" />
           <div className="aspect-[3/4] bg-gradient-to-br from-slate-100 to-slate-300 rounded-lg" />
           <div className="aspect-[3/4] bg-gradient-to-br from-stone-100 to-stone-300 rounded-lg" />
@@ -23,7 +23,7 @@ export default function About() {
         </div>
 
         {/* Right Column - Text */}
-        <div className="w-1/2 overflow-y-auto p-16">
+        <div className="w-1/2 overflow-y-auto p-16 hide-scrollbar">
           <div className="max-w-xl">
             <h2 className="text-4xl font-spectral font-bold mb-8">Our Story</h2>
             <p className="text-lg leading-relaxed mb-6">
