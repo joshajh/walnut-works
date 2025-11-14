@@ -1,6 +1,7 @@
 'use client';
 
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
@@ -10,18 +11,18 @@ const MapSection = dynamic(() => import('@/components/MapSection'), {
 
 export default function Home() {
   return (
-    <>
-      <div className="h-screen overflow-y-scroll snap-y snap-mandatory bg-[#F0EEDE] noise-bg">
-        <Navigation />
+    <div className="h-screen overflow-y-scroll snap-y snap-mandatory bg-[#F0EEDE] noise-bg">
+      <Navigation />
 
-        {/* Section 1: Hero */}
-        <section className="h-screen snap-start snap-always flex items-end justify-end p-16 border-b border-gray-900">
-          <h1 className="text-7xl font-spectral font-bold drop-shadow-md">Walnut Works</h1>
-        </section>
+      {/* Section 1: Hero */}
+      <section className="h-screen snap-start snap-always flex items-end justify-end p-16 relative">
+        <h1 className="text-7xl font-spectral font-bold drop-shadow-md">Walnut Works</h1>
+        <div className="absolute bottom-0 left-0 right-0 border-b border-gray-900 mx-12"></div>
+      </section>
 
-        {/* Section 2: Introduction */}
-        <section className="h-screen snap-start snap-always flex items-center justify-center p-16 overflow-hidden border-b border-gray-900">
-          <div className="max-w-6xl grid grid-cols-2 gap-12 items-center">
+      {/* Section 2: Introduction */}
+      <section className="h-screen snap-start snap-always flex items-center justify-center p-16 overflow-hidden relative">
+        <div className="max-w-6xl grid grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,13 +61,16 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 border-b border-gray-900 mx-12"></div>
       </section>
 
-        {/* Section 3: Visit */}
-        <section className="h-screen snap-start snap-always">
-          <MapSection />
-        </section>
-      </div>
-    </>
+      {/* Section 3: Visit */}
+      <section className="h-screen snap-start snap-always">
+        <MapSection />
+      </section>
+
+      {/* Footer */}
+      <Footer />
+    </div>
   );
 }
