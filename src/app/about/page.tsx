@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation';
 
 export default function About() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen noise-bg">
       <Navigation />
 
       {/* Hero Section */}

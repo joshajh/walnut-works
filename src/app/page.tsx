@@ -10,12 +10,12 @@ const MapSection = dynamic(() => import('@/components/MapSection'), {
 
 export default function Home() {
   return (
-    <div className="h-screen overflow-y-scroll snap-y snap-mandatory bg-[#F0EEDE]">
+    <div className="h-screen overflow-y-scroll snap-y snap-mandatory bg-[#F0EEDE] noise-bg">
       <Navigation />
 
       {/* Section 1: Hero */}
       <section className="h-screen snap-start flex items-end justify-end p-16">
-        <h1 className="text-8xl font-spectral font-bold">Walnut Works</h1>
+        <h1 className="text-7xl font-spectral font-bold drop-shadow-md">Walnut Works</h1>
       </section>
 
       {/* Section 2: Introduction */}
@@ -27,12 +27,12 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <p className="text-xl leading-relaxed mb-8">
+            <p className="text-xl leading-relaxed mb-8 text-gray-800">
               Welcome to Walnut Works, a creative studio dedicated to crafting
               exceptional design experiences. We blend traditional craftsmanship
               with modern innovation.
             </p>
-            <p className="text-xl leading-relaxed">
+            <p className="text-xl leading-relaxed text-gray-800">
               Our work spans multiple disciplines, always with an eye for detail
               and a commitment to quality.
             </p>

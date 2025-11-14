@@ -44,7 +44,7 @@ const projects = [
 
 export default function Work() {
   return (
-    <div className="min-h-screen pb-24">
+    <div className="min-h-screen pb-24 noise-bg">
       <Navigation />
 
       <div className="pt-32 px-16 space-y-24">

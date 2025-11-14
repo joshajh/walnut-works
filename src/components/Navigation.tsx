@@ -7,7 +7,7 @@ export default function Navigation() {
   const [workMenuOpen, setWorkMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-8 right-8 z-50 flex gap-8 text-sm">
+    <nav className="fixed top-8 right-8 z-50 flex gap-8 text-sm text-gray-800">
       <Link href="/about" className="hover:opacity-60 transition-opacity">
         About
       </Link>
