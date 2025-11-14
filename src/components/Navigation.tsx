@@ -19,6 +19,9 @@ export default function Navigation({ theme = 'dark' }: NavigationProps) {
       <Link href="/about" className="hover:opacity-60 transition-opacity">
         About
       </Link>
+      <Link href="/history" className="hover:opacity-60 transition-opacity">
+        History
+      </Link>
       <div
         className="relative"
         onMouseEnter={() => setWorkMenuOpen(true)}
