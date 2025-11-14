@@ -5,7 +5,7 @@ import Navigation from '@/components/Navigation';
 export default function About() {
   return (
     <div className="min-h-screen noise-bg">
-      <Navigation />
+      <Navigation theme="light" />
 
       {/* Hero Section */}
       <section className="h-screen flex items-center justify-center">

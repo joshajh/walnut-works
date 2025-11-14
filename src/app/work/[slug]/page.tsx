@@ -67,7 +67,7 @@ export default function WorkDetail({
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center noise-bg">
-        <Navigation />
+        <Navigation theme="light" />
         <p>Project not found</p>
       </div>
     );
@@ -75,7 +75,7 @@ export default function WorkDetail({
 
   return (
     <div className="min-h-screen pb-24 noise-bg">
-      <Navigation />
+      <Navigation theme="light" />
 
       <div className="pt-32 px-16 max-w-7xl mx-auto">
         {/* Back Link */}
