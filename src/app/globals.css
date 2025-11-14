@@ -44,6 +44,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color: #d63336;
+  font-variant: small-caps;
+}
+
+nav {
+  font-variant: small-caps;
 }
 
 /* Hide scrollbars but keep functionality */
