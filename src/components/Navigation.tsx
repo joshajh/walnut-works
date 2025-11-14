@@ -19,27 +19,27 @@ export default function Navigation({ theme = 'dark' }: NavigationProps) {
   return (
     <>
       {/* Spanning border line */}
-      <div className={`fixed top-8 left-8 right-8 z-40 border-t border-b ${borderColor} h-[42px] pointer-events-none`} />
+      <div className={`fixed top-12 left-12 right-12 z-40 border-t border-b ${borderColor} h-[48px] pointer-events-none`} />
 
       {/* Home link - top left */}
       <Link
         href="/"
-        className={`fixed top-8 left-8 z-50 text-sm ${textColor} border-l border-r ${borderColor} px-4 py-2 hover:opacity-60 transition-opacity bg-[#F0EEDE]`}
+        className={`fixed top-12 left-12 z-50 text-xs tracking-widest ${textColor} border-l border-r ${borderColor} px-6 py-3 hover:opacity-60 transition-all duration-300 bg-[#F0EEDE]`}
       >
         WW.
       </Link>
 
       {/* Main nav - top right */}
-      <nav className={`fixed top-8 right-8 z-50 flex text-sm ${textColor}`}>
+      <nav className={`fixed top-12 right-12 z-50 flex text-xs ${textColor}`}>
         <Link
           href="/about"
-          className={`border-l border-r ${borderColor} px-4 py-2 hover:opacity-60 transition-opacity bg-[#F0EEDE]`}
+          className={`border-l border-r ${borderColor} px-6 py-3 hover:opacity-60 transition-all duration-300 bg-[#F0EEDE]`}
         >
           About
         </Link>
         <Link
           href="/history"
-          className={`border-r ${borderColor} px-4 py-2 hover:opacity-60 transition-opacity bg-[#F0EEDE]`}
+          className={`border-r ${borderColor} px-6 py-3 hover:opacity-60 transition-all duration-300 bg-[#F0EEDE]`}
         >
           History
         </Link>
@@ -50,21 +50,21 @@ export default function Navigation({ theme = 'dark' }: NavigationProps) {
         >
           <Link
             href="/work"
-            className={`border-r ${borderColor} px-4 py-2 hover:opacity-60 transition-opacity block bg-[#F0EEDE]`}
+            className={`border-r ${borderColor} px-6 py-3 hover:opacity-60 transition-all duration-300 block bg-[#F0EEDE]`}
           >
             Work
           </Link>
           {workMenuOpen && (
-            <div className={`absolute top-full right-0 mt-2 ${menuBg} ${menuTextColor} border ${menuBorderColor}`}>
+            <div className={`absolute top-full right-0 mt-3 ${menuBg} ${menuTextColor} border ${menuBorderColor} min-w-[200px]`}>
               <Link
                 href="/work/project-1"
-                className={`block px-4 py-3 border-b ${menuBorderColor} hover:opacity-60 transition-opacity`}
+                className={`block px-6 py-4 border-b ${menuBorderColor} hover:opacity-60 transition-all duration-300`}
               >
                 Project One
               </Link>
               <Link
                 href="/work/project-2"
-                className={`block px-4 py-3 hover:opacity-60 transition-opacity`}
+                className={`block px-6 py-4 hover:opacity-60 transition-all duration-300`}
               >
                 Project Two
               </Link>
