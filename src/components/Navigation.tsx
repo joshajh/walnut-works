@@ -18,10 +18,13 @@ export default function Navigation({ theme = 'dark' }: NavigationProps) {
 
   return (
     <>
+      {/* Spanning border line */}
+      <div className={`fixed top-8 left-8 right-8 z-40 border-t border-b ${borderColor} h-[42px] pointer-events-none`} />
+
       {/* Home link - top left */}
       <Link
         href="/"
-        className={`fixed top-8 left-8 z-50 text-sm ${textColor} border ${borderColor} px-4 py-2 hover:opacity-60 transition-opacity`}
+        className={`fixed top-8 left-8 z-50 text-sm ${textColor} border-l border-r ${borderColor} px-4 py-2 hover:opacity-60 transition-opacity bg-[#F0EEDE]`}
       >
         WW.
       </Link>
@@ -30,13 +33,13 @@ export default function Navigation({ theme = 'dark' }: NavigationProps) {
       <nav className={`fixed top-8 right-8 z-50 flex text-sm ${textColor}`}>
         <Link
           href="/about"
-          className={`border ${borderColor} border-r-0 px-4 py-2 hover:opacity-60 transition-opacity`}
+          className={`border-l border-r ${borderColor} px-4 py-2 hover:opacity-60 transition-opacity bg-[#F0EEDE]`}
         >
           About
         </Link>
         <Link
           href="/history"
-          className={`border ${borderColor} border-r-0 px-4 py-2 hover:opacity-60 transition-opacity`}
+          className={`border-r ${borderColor} px-4 py-2 hover:opacity-60 transition-opacity bg-[#F0EEDE]`}
         >
           History
         </Link>
@@ -47,7 +50,7 @@ export default function Navigation({ theme = 'dark' }: NavigationProps) {
         >
           <Link
             href="/work"
-            className={`border ${borderColor} px-4 py-2 hover:opacity-60 transition-opacity block`}
+            className={`border-r ${borderColor} px-4 py-2 hover:opacity-60 transition-opacity block bg-[#F0EEDE]`}
           >
             Work
           </Link>
