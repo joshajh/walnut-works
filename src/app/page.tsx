@@ -17,7 +17,7 @@ export default function Home() {
       {/* Section 1: Hero */}
       <section className="h-screen snap-start snap-always flex items-end justify-end p-16 relative">
         <div className="text-right">
-          <h1 className="text-7xl font-spectral font-bold drop-shadow-md !text-[#c4342e]">Walnut Works</h1>
+          <h1 className="text-7xl font-spectral font-normal drop-shadow-md !text-[#c4342e]">Walnut Works</h1>
           <p className="text-base tracking-widest mt-2 text-gray-800 uppercase" style={{ letterSpacing: '0.08em', fontWeight: 500 }}>
             Master bronze foundry. Suffolk, UK.
           </p>
@@ -74,7 +74,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <Footer />
+      <section className="min-h-screen snap-start snap-always flex items-end">
+        <Footer />
+      </section>
     </div>
   );
 }

@@ -86,15 +86,19 @@ export default function WorkshopsPage() {
     <div className="min-h-screen bg-[#F0EEDE] noise-bg">
       <Navigation />
 
-      <div className="pt-32 px-12 max-w-7xl mx-auto">
+      {/* Page Title */}
+      <div className="fixed top-[48px] left-0 z-40 px-6 py-3 bg-[#F0EEDE]/80 backdrop-blur-md">
+        <h1 className="text-2xl font-serif font-normal">Workshops</h1>
+      </div>
+
+      <div className="pt-24 px-8 max-w-7xl mx-auto">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-20"
+          className="mb-16"
         >
-          <h1 className="text-6xl font-serif font-bold mb-6">Workshops</h1>
           <p className="text-xl text-gray-700 max-w-3xl">
             Join us for hands-on workshops in traditional bronze casting techniques.
             Learn from master craftspeople in our Suffolk studio.

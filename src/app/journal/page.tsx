@@ -40,15 +40,19 @@ export default function JournalPage() {
     <div className="min-h-screen bg-[#F0EEDE] noise-bg">
       <Navigation />
 
-      <div className="pt-32 px-12 max-w-7xl mx-auto">
+      {/* Page Title */}
+      <div className="fixed top-[48px] left-0 z-40 px-6 py-3 bg-[#F0EEDE]/80 backdrop-blur-md">
+        <h1 className="text-2xl font-serif font-normal">Journal</h1>
+      </div>
+
+      <div className="pt-24 px-8 max-w-7xl mx-auto">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-20"
+          className="mb-16"
         >
-          <h1 className="text-6xl font-serif font-bold mb-6">Journal</h1>
           <p className="text-xl text-gray-700 max-w-3xl">
             Thoughts, insights, and stories from the foundry.
           </p>
@@ -87,7 +91,7 @@ export default function JournalPage() {
                         day: 'numeric',
                       })}
                     </time>
-                    <h2 className="text-4xl font-serif font-bold mt-2 mb-4 group-hover:text-[#c4342e] transition-colors">
+                    <h2 className="text-4xl font-serif font-normal mt-2 mb-4 group-hover:text-[#c4342e] transition-colors">
                       {entry.title}
                     </h2>
                     <p className="text-lg text-gray-700 leading-relaxed">

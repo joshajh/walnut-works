@@ -38,15 +38,19 @@ export default function ArtistsPage() {
     <div className="min-h-screen bg-[#F0EEDE] noise-bg">
       <Navigation />
 
-      <div className="pt-32 px-12 max-w-7xl mx-auto">
+      {/* Page Title */}
+      <div className="fixed top-[48px] left-0 z-40 px-6 py-3 bg-[#F0EEDE]/80 backdrop-blur-md">
+        <h1 className="text-2xl font-serif font-normal">Artists In Residence</h1>
+      </div>
+
+      <div className="pt-24 px-8 max-w-7xl mx-auto">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-20"
+          className="mb-16"
         >
-          <h1 className="text-6xl font-serif font-bold mb-6">Artists In Residence</h1>
           <p className="text-xl text-gray-700 max-w-3xl">
             Meet the talented artists working within our foundry, creating exceptional bronze sculptures and exploring innovative casting techniques.
           </p>
@@ -77,7 +81,7 @@ export default function ArtistsPage() {
                       />
                     </div>
                   )}
-                  <h2 className="text-3xl font-serif font-bold mb-3 group-hover:text-[#c4342e] transition-colors">
+                  <h2 className="text-3xl font-serif font-normal mb-3 group-hover:text-[#c4342e] transition-colors">
                     {artist.name}
                   </h2>
                   <p className="text-gray-700 leading-relaxed line-clamp-4">

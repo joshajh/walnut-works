@@ -18,8 +18,8 @@ export default function Navigation({ theme = 'dark' }: NavigationProps) {
 
   return (
     <>
-      {/* Spanning border line */}
-      <div className={`fixed top-0 left-0 right-0 z-40 border-b ${borderColor} h-[48px] pointer-events-none`} />
+      {/* Spanning border line and background */}
+      <div className={`fixed top-0 left-0 right-0 z-40 border-b ${borderColor} h-[48px] bg-[#F0EEDE]/80 backdrop-blur-md`} />
 
       {/* Main nav - left */}
       <nav className={`fixed top-0 left-0 z-50 flex text-base ${textColor}`}>
