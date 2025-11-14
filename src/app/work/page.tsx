@@ -44,8 +44,8 @@ const projects = [
 
 export default function Work() {
   return (
-    <div className="min-h-screen pb-24 noise-bg">
-      <Navigation theme="light" />
+    <div className="min-h-screen pb-24 bg-[#F0EEDE] noise-bg">
+      <Navigation />
 
       <div className="pt-32 px-16 space-y-24">
         {projects.map((project) => (

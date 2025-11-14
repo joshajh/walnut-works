@@ -4,8 +4,8 @@ import Navigation from '@/components/Navigation';
 
 export default function History() {
   return (
-    <div className="min-h-screen noise-bg">
-      <Navigation theme="light" />
+    <div className="min-h-screen bg-[#F0EEDE] noise-bg">
+      <Navigation />
 
       {/* Hero Section */}
       <section className="h-screen flex items-center justify-center">

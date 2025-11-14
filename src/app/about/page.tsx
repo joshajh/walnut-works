@@ -51,7 +51,7 @@ function ContentBlock({ block, index }: { block: typeof contentBlocks[0]; index:
           <>
             <motion.div className="space-y-6">
               <h2 className="text-5xl font-spectral font-bold">{block.title}</h2>
-              <p className="text-xl leading-relaxed text-gray-200">{block.text}</p>
+              <p className="text-xl leading-relaxed text-gray-800">{block.text}</p>
             </motion.div>
             <motion.div
               style={{ y: imageY }}
@@ -70,7 +70,7 @@ function ContentBlock({ block, index }: { block: typeof contentBlocks[0]; index:
             </motion.div>
             <motion.div className="space-y-6">
               <h2 className="text-5xl font-spectral font-bold">{block.title}</h2>
-              <p className="text-xl leading-relaxed text-gray-200">{block.text}</p>
+              <p className="text-xl leading-relaxed text-gray-800">{block.text}</p>
             </motion.div>
           </>
         )}
@@ -90,8 +90,8 @@ export default function About() {
   const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
 
   return (
-    <div className="min-h-screen noise-bg">
-      <Navigation theme="light" />
+    <div className="min-h-screen bg-[#F0EEDE] noise-bg">
+      <Navigation />
 
       {/* Hero Section */}
       <motion.section
@@ -111,7 +111,7 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-xl text-gray-200 max-w-2xl text-center"
+          className="text-xl text-gray-800 max-w-2xl text-center"
         >
           We are a design studio dedicated to creating meaningful experiences
           through thoughtful craft and authentic collaboration.
@@ -135,7 +135,7 @@ export default function About() {
           className="max-w-4xl text-center"
         >
           <h2 className="text-6xl font-spectral font-bold mb-8">Let&apos;s Create Together</h2>
-          <p className="text-2xl leading-relaxed text-gray-200">
+          <p className="text-2xl leading-relaxed text-gray-800">
             We are always open to new collaborations and conversations.
             Reach out to discuss your next project.
           </p>
