@@ -133,7 +133,7 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-[#F0EEDE] noise-bg">
-      <Navigation />
+      <Navigation pageTitle="About" />
 
       {/* Hero Section */}
       <motion.section

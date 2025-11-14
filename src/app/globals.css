@@ -72,6 +72,31 @@ nav {
   font-weight: 500;
 }
 
+/* Custom minimal scrollbar styling */
+* {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #c4342e #F0EEDE; /* thumb and track color for Firefox */
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #F0EEDE;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #c4342e;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #a02d27;
+}
+
 /* Hide scrollbars but keep functionality */
 .hide-scrollbar {
   scrollbar-width: none; /* Firefox */

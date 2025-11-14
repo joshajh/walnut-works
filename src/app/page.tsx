@@ -11,7 +11,7 @@ const MapSection = dynamic(() => import('@/components/MapSection'), {
 
 export default function Home() {
   return (
-    <div className="h-screen overflow-y-scroll snap-y snap-mandatory bg-[#F0EEDE] noise-bg">
+    <div className="h-screen overflow-y-auto snap-y snap-mandatory bg-[#F0EEDE] noise-bg">
       <Navigation />
 
       {/* Section 1: Hero */}

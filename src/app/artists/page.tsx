@@ -35,26 +35,13 @@ export default function ArtistsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F0EEDE] noise-bg">
-      <Navigation />
+    <div className="min-h-screen bg-[#F0EEDE] noise-bg pb-[48px]">
+      <Navigation
+        pageTitle="Artists"
+        pageDescription="Meet the talented artists working within our foundry, creating exceptional bronze sculptures and exploring innovative casting techniques."
+      />
 
-      {/* Page Title */}
-      <div className="fixed top-[48px] left-0 z-40 px-6 py-3 bg-[#F0EEDE]/80 backdrop-blur-md">
-        <h1 className="text-2xl font-serif font-normal">Artists In Residence</h1>
-      </div>
-
-      <div className="pt-24 px-8 max-w-7xl mx-auto">
-        {/* Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <p className="text-xl text-gray-700 max-w-3xl">
-            Meet the talented artists working within our foundry, creating exceptional bronze sculptures and exploring innovative casting techniques.
-          </p>
-        </motion.div>
+      <div className="pt-20 px-8 max-w-7xl mx-auto">
 
         {/* Artists Grid */}
         {loading ? (

@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 export default function History() {
   return (
     <div className="bg-[#F0EEDE] noise-bg">
-      <Navigation />
+      <Navigation pageTitle="History" />
 
       {/* Opening Statement */}
       <section className="min-h-screen flex items-center justify-center px-8 pt-24">
