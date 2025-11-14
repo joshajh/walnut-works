@@ -1,6 +1,7 @@
 'use client';
 
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { use } from 'react';
@@ -69,6 +70,7 @@ export default function WorkDetail({
       <div className="min-h-screen flex items-center justify-center bg-[#F0EEDE] noise-bg">
         <Navigation />
         <p>Project not found</p>
+        <Footer />
       </div>
     );
   }
@@ -141,6 +143,8 @@ export default function WorkDetail({
           ))}
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

@@ -19,29 +19,39 @@ export default function Navigation({ theme = 'dark' }: NavigationProps) {
   return (
     <>
       {/* Spanning border line */}
-      <div className={`fixed top-12 left-12 right-12 z-40 border-t border-b ${borderColor} h-[48px] pointer-events-none`} />
+      <div className={`fixed top-0 left-0 right-0 z-40 border-b ${borderColor} h-[48px] pointer-events-none`} />
 
-      {/* Home link - top left */}
-      <Link
-        href="/"
-        className={`fixed top-12 left-12 z-50 text-xs tracking-widest ${textColor} border-l border-r ${borderColor} px-6 py-3 hover:opacity-60 transition-all duration-300 bg-[#F0EEDE]`}
-      >
-        WW.
-      </Link>
-
-      {/* Main nav - top right */}
-      <nav className={`fixed top-12 right-12 z-50 flex text-xs ${textColor}`}>
+      {/* Main nav - left */}
+      <nav className={`fixed top-0 left-0 z-50 flex text-base ${textColor}`}>
         <Link
           href="/about"
-          className={`border-l border-r ${borderColor} px-6 py-3 hover:opacity-60 transition-all duration-300 bg-[#F0EEDE]`}
+          className={`border-l border-r ${borderColor} px-6 py-3 hover:opacity-60 transition-all duration-300 backdrop-blur-md`}
         >
           About
         </Link>
         <Link
           href="/history"
-          className={`border-r ${borderColor} px-6 py-3 hover:opacity-60 transition-all duration-300 bg-[#F0EEDE]`}
+          className={`border-r ${borderColor} px-6 py-3 hover:opacity-60 transition-all duration-300 backdrop-blur-md`}
         >
           History
+        </Link>
+        <Link
+          href="/workshops"
+          className={`border-r ${borderColor} px-6 py-3 hover:opacity-60 transition-all duration-300 backdrop-blur-md`}
+        >
+          Workshops
+        </Link>
+        <Link
+          href="/journal"
+          className={`border-r ${borderColor} px-6 py-3 hover:opacity-60 transition-all duration-300 backdrop-blur-md`}
+        >
+          Journal
+        </Link>
+        <Link
+          href="/artists"
+          className={`border-r ${borderColor} px-6 py-3 hover:opacity-60 transition-all duration-300 backdrop-blur-md`}
+        >
+          Artists
         </Link>
         <div
           className="relative"
@@ -50,28 +60,47 @@ export default function Navigation({ theme = 'dark' }: NavigationProps) {
         >
           <Link
             href="/work"
-            className={`border-r ${borderColor} px-6 py-3 hover:opacity-60 transition-all duration-300 block bg-[#F0EEDE]`}
+            className={`border-r ${borderColor} px-6 py-3 hover:opacity-60 transition-all duration-300 block backdrop-blur-md`}
           >
             Work
           </Link>
-          {workMenuOpen && (
-            <div className={`absolute top-full right-0 mt-3 ${menuBg} ${menuTextColor} border ${menuBorderColor} min-w-[200px]`}>
-              <Link
-                href="/work/project-1"
-                className={`block px-6 py-4 border-b ${menuBorderColor} hover:opacity-60 transition-all duration-300`}
-              >
-                Project One
-              </Link>
-              <Link
-                href="/work/project-2"
-                className={`block px-6 py-4 hover:opacity-60 transition-all duration-300`}
-              >
-                Project Two
-              </Link>
-            </div>
-          )}
         </div>
       </nav>
+
+      {/* Home link - far right */}
+      <Link
+        href="/"
+        className={`fixed top-0 right-0 z-50 text-base tracking-widest text-[#c4342e] border-r ${borderColor} px-6 py-3 hover:opacity-60 transition-all duration-300 backdrop-blur-md`}
+        style={{ letterSpacing: '0.08em', fontWeight: 500 }}
+      >
+        WW.
+      </Link>
+
+      {/* Work submenu - full width */}
+      {workMenuOpen && (
+        <div
+          className={`fixed top-[48px] left-0 right-0 z-40 border-b ${borderColor} backdrop-blur-md`}
+          onMouseEnter={() => setWorkMenuOpen(true)}
+          onMouseLeave={() => setWorkMenuOpen(false)}
+        >
+          <div className="flex justify-evenly">
+            <Link
+              href="/work/project-1"
+              className={`flex-1 text-center px-6 py-3 border-r ${borderColor} hover:opacity-60 transition-all duration-300 text-base ${textColor}`}
+              style={{ letterSpacing: '0.08em', fontWeight: 500 }}
+            >
+              Project One
+            </Link>
+            <Link
+              href="/work/project-2"
+              className={`flex-1 text-center px-6 py-3 hover:opacity-60 transition-all duration-300 text-base ${textColor}`}
+              style={{ letterSpacing: '0.08em', fontWeight: 500 }}
+            >
+              Project Two
+            </Link>
+          </div>
+        </div>
+      )}
     </>
   );
 }

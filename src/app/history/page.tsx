@@ -1,6 +1,7 @@
 'use client';
 
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 export default function History() {
   return (
@@ -9,7 +10,7 @@ export default function History() {
 
       {/* Hero Section */}
       <section className="h-screen flex items-center justify-center">
-        <h1 className="text-8xl font-spectral font-bold">Walnut Works</h1>
+        <h1 className="text-8xl font-spectral font-bold !text-[#c4342e]">Walnut Works</h1>
       </section>
 
       {/* Two Column Section with Independent Scrolling */}
@@ -72,6 +73,8 @@ export default function History() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

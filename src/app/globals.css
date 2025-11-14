@@ -11,7 +11,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
-  --font-serif: var(--font-playfair);
+  --font-serif: var(--font-pt-serif);
   --color-brand-red: #c4342e;
 }
 
@@ -46,9 +46,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #c4342e;
-  font-family: var(--font-playfair), Georgia, serif;
-  font-variant: small-caps;
+  color: #171717;
+  font-family: var(--font-pt-serif), Georgia, serif;
   font-weight: 700;
   letter-spacing: 0.02em;
   line-height: 1.2;
@@ -81,4 +80,10 @@ nav {
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
+}
+
+/* Ensure Section 2 stops scroll snap */
+.snap-section-scrollable {
+  scroll-snap-stop: always;
+  overscroll-behavior: contain;
 }

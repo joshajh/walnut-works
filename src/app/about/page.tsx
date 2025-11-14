@@ -1,10 +1,16 @@
 'use client';
 
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
-const contentBlocks = [
+interface AboutContent {
+  section: string;
+  content: string;
+}
+
+const defaultBlocks = [
   {
     title: 'Crafting Excellence',
     text: 'At Walnut Works, we believe in the power of thoughtful design. Every project begins with understanding—understanding your vision, your needs, and the story you want to tell.',
@@ -27,7 +33,7 @@ const contentBlocks = [
   },
 ];
 
-function ContentBlock({ block, index }: { block: typeof contentBlocks[0]; index: number }) {
+function ContentBlock({ block, index }: { block: typeof defaultBlocks[0]; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -80,6 +86,10 @@ function ContentBlock({ block, index }: { block: typeof contentBlocks[0]; index:
 }
 
 export default function About() {
+  const [aboutContent, setAboutContent] = useState<AboutContent[]>([]);
+  const [contentBlocks, setContentBlocks] = useState(defaultBlocks);
+  const [heroText, setHeroText] = useState('We are a design studio dedicated to creating meaningful experiences through thoughtful craft and authentic collaboration.');
+
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -88,6 +98,38 @@ export default function About() {
 
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
+
+  useEffect(() => {
+    fetchAboutContent();
+  }, []);
+
+  const fetchAboutContent = async () => {
+    try {
+      const res = await fetch('/api/about');
+      const data = await res.json();
+      setAboutContent(data);
+
+      // Update hero text if available
+      const hero = data.find((item: AboutContent) => item.section === 'hero');
+      if (hero) setHeroText(hero.content);
+
+      // Update content blocks if available
+      const blocks = data.filter((item: AboutContent) => item.section.startsWith('block_'));
+      if (blocks.length > 0) {
+        const updatedBlocks = blocks.map((block: AboutContent, index: number) => {
+          const lines = block.content.split('\n');
+          return {
+            title: lines[0] || defaultBlocks[index]?.title || 'Untitled',
+            text: lines.slice(1).join('\n') || defaultBlocks[index]?.text || '',
+            image: defaultBlocks[index]?.image || 'from-gray-200 to-gray-400',
+          };
+        });
+        setContentBlocks(updatedBlocks);
+      }
+    } catch (error) {
+      console.error('Failed to fetch about content:', error);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#F0EEDE] noise-bg">
@@ -113,8 +155,7 @@ export default function About() {
           transition={{ duration: 1, delay: 0.2 }}
           className="text-xl text-gray-800 max-w-2xl text-center"
         >
-          We are a design studio dedicated to creating meaningful experiences
-          through thoughtful craft and authentic collaboration.
+          {heroText}
         </motion.p>
       </motion.section>
 
@@ -141,6 +182,8 @@ export default function About() {
           </p>
         </motion.div>
       </section>
+
+      <Footer />
     </div>
   );
 }

@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-12 py-24 grid grid-cols-3 gap-16">
         {/* Column 1: Brand */}
         <div>
-          <h3 className="text-2xl font-playfair font-bold mb-6">Walnut Works</h3>
+          <h3 className="text-2xl font-serif font-bold mb-6 !text-[#c4342e]">Walnut Works</h3>
           <p className="text-sm leading-relaxed text-gray-700 font-light">
             A design studio dedicated to creating meaningful experiences through thoughtful craft and authentic collaboration.
           </p>
