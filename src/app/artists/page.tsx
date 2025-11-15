@@ -43,40 +43,43 @@ export default function ArtistsPage() {
 
       <div className="pt-20 px-8 max-w-7xl mx-auto">
 
-        {/* Artists Grid */}
+        {/* Artists */}
         {loading ? (
           <p className="text-gray-600">Loading...</p>
         ) : artists.length === 0 ? (
           <p className="text-gray-600">No artists to display.</p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+          <div className="space-y-12 mb-20">
             {artists.map((artist, index) => (
               <motion.article
                 key={artist.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group"
               >
-                <Link href={`/artists/${artist.slug}`} className="block">
+                <Link href={`/artists/${artist.slug}`} className="block group md:flex gap-8 items-center">
                   {artist.profile_image_url && (
-                    <div className="aspect-[3/4] bg-gray-200 rounded-lg overflow-hidden mb-6">
+                    <div className="md:w-2/5 aspect-[4/3] overflow-hidden relative mb-6 md:mb-0">
                       <img
                         src={artist.profile_image_url}
                         alt={artist.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
+                      <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
                     </div>
                   )}
-                  <h2 className="text-3xl font-serif font-normal mb-3 group-hover:text-[#c4342e] transition-colors">
-                    {artist.name}
-                  </h2>
-                  <p className="text-gray-700 leading-relaxed line-clamp-4">
-                    {artist.bio}
-                  </p>
-                  <span className="inline-block mt-4 text-[#c4342e] font-medium group-hover:underline">
-                    View profile →
-                  </span>
+                  <div className="md:w-3/5">
+                    <h2 className="text-3xl font-serif font-bold mb-3 group-hover:text-[#c4342e] transition-colors">
+                      {artist.name}
+                    </h2>
+                    <p className="text-gray-700 leading-relaxed">
+                      {artist.bio}
+                    </p>
+                    <span className="inline-block mt-4 text-[#c4342e] font-medium group-hover:underline">
+                      View profile →
+                    </span>
+                  </div>
                 </Link>
               </motion.article>
             ))}

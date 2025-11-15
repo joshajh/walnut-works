@@ -9,9 +9,10 @@ interface NavigationProps {
   theme?: 'light' | 'dark';
   pageTitle?: string;
   pageDescription?: string;
+  tabButtons?: React.ReactNode;
 }
 
-export default function Navigation({ theme = 'dark', pageTitle, pageDescription }: NavigationProps) {
+export default function Navigation({ theme = 'dark', pageTitle, pageDescription, tabButtons }: NavigationProps) {
   const [workMenuOpen, setWorkMenuOpen] = useState(false);
   const [learnMenuOpen, setLearnMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -23,8 +24,8 @@ export default function Navigation({ theme = 'dark', pageTitle, pageDescription 
   const menuBorderColor = theme === 'light' ? 'border-gray-700' : 'border-gray-300';
 
   const isActive = (path: string) => {
-    if (path === '/work') {
-      return pathname === '/work' || pathname?.startsWith('/work/');
+    if (path === '/artists') {
+      return pathname === '/artists' || pathname?.startsWith('/artists/') || pathname === '/2025-programme' || pathname === '/2024-programme';
     }
     if (path === '/learn') {
       return pathname === '/history' || pathname === '/process';
@@ -54,27 +55,168 @@ export default function Navigation({ theme = 'dark', pageTitle, pageDescription 
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed top-[48px] left-0 right-0 z-30 flex border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80"
+            className="fixed top-[48px] left-0 right-0 z-20"
           >
-            {/* Title Tab - Vertical */}
-            <div
-              className="border-r border-gray-300 flex-shrink-0"
-              style={{ writingMode: 'vertical-rl' }}
-            >
-              <div className="px-3 py-6 text-[#c4342e] font-serif text-lg" style={{ letterSpacing: '0.08em', fontWeight: 500 }}>
-                {pageTitle}
+            <div className="flex items-start">
+              {/* Title Tab - Vertical */}
+              <div
+                className="flex-shrink-0 backdrop-blur-md bg-[#F0EEDE]/80 border-r border-b border-gray-300"
+                style={{ writingMode: 'vertical-rl' }}
+              >
+                <div className="px-3 py-6 text-[#c4342e] font-serif text-lg" style={{ letterSpacing: '0.08em', fontWeight: 500 }}>
+                  {pageTitle}
+                </div>
+              </div>
+
+              {/* Description & Tabs Column */}
+              <div className="flex-1">
+                {/* Description - Horizontal (hidden when submenu is open) */}
+                {pageDescription && !learnMenuOpen && !workMenuOpen && (
+                  <div className="px-6 py-3 text-gray-700 text-base leading-relaxed border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80">
+                    {pageDescription}
+                  </div>
+                )}
+
+                {/* Learn submenu */}
+                {learnMenuOpen && (
+                  <div className="border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80">
+                    <div className="flex">
+                      <div className="flex-1"></div>
+                      <div
+                        className="flex"
+                        onMouseEnter={() => setLearnMenuOpen(true)}
+                        onMouseLeave={() => setLearnMenuOpen(false)}
+                      >
+                        <Link
+                          href="/history"
+                          className={`px-6 py-2 hover:opacity-60 transition-all duration-300 text-base ${textColor}`}
+                          style={{ letterSpacing: '0.08em', fontWeight: 500 }}
+                        >
+                          History
+                        </Link>
+                        <Link
+                          href="/process"
+                          className={`px-6 py-2 hover:opacity-60 transition-all duration-300 text-base ${textColor}`}
+                          style={{ letterSpacing: '0.08em', fontWeight: 500 }}
+                        >
+                          Process
+                        </Link>
+                      </div>
+                      {/* Spacers for Bespoke Casting, Workshops, Work */}
+                      <div style={{ width: '185px' }}></div>
+                      <div style={{ width: '133px' }}></div>
+                      <div style={{ width: '73px' }}></div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Work submenu */}
+                {workMenuOpen && (
+                  <div className="border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80">
+                    <div className="flex">
+                      <div className="flex-1"></div>
+                      <div
+                        className="flex"
+                        onMouseEnter={() => setWorkMenuOpen(true)}
+                        onMouseLeave={() => setWorkMenuOpen(false)}
+                      >
+                        <Link
+                          href="/2024-programme"
+                          className={`px-6 py-2 hover:opacity-60 transition-all duration-300 text-base ${textColor}`}
+                          style={{ letterSpacing: '0.08em', fontWeight: 500 }}
+                        >
+                          2024 Programme
+                        </Link>
+                        <Link
+                          href="/2025-programme"
+                          className={`px-6 py-2 hover:opacity-60 transition-all duration-300 text-base ${textColor}`}
+                          style={{ letterSpacing: '0.08em', fontWeight: 500 }}
+                        >
+                          2025 Programme
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Tab Buttons */}
+                {tabButtons && (
+                  <div className="border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80">
+                    {tabButtons}
+                  </div>
+                )}
               </div>
             </div>
-
-            {/* Description - Horizontal */}
-            {pageDescription && (
-              <div className="flex-1 px-6 py-3 text-gray-700 text-base leading-relaxed flex items-center">
-                {pageDescription}
-              </div>
-            )}
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Submenus when no page title */}
+      {!pageTitle && (
+        <div className="fixed top-[48px] left-0 right-0 z-20">
+          {/* Learn submenu */}
+          {learnMenuOpen && (
+            <div className="border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80">
+              <div className="flex">
+                <div className="flex-1"></div>
+                <div
+                  className="flex"
+                  onMouseEnter={() => setLearnMenuOpen(true)}
+                  onMouseLeave={() => setLearnMenuOpen(false)}
+                >
+                  <Link
+                    href="/history"
+                    className={`px-6 py-2 hover:opacity-60 transition-all duration-300 text-base ${textColor}`}
+                    style={{ letterSpacing: '0.08em', fontWeight: 500 }}
+                  >
+                    History
+                  </Link>
+                  <Link
+                    href="/process"
+                    className={`px-6 py-2 hover:opacity-60 transition-all duration-300 text-base ${textColor}`}
+                    style={{ letterSpacing: '0.08em', fontWeight: 500 }}
+                  >
+                    Process
+                  </Link>
+                </div>
+                {/* Spacers for Bespoke Casting, Workshops, Work */}
+                <div style={{ width: '185px' }}></div>
+                <div style={{ width: '133px' }}></div>
+                <div style={{ width: '73px' }}></div>
+              </div>
+            </div>
+          )}
+
+          {/* Work submenu */}
+          {workMenuOpen && (
+            <div className="border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80">
+              <div className="flex">
+                <div className="flex-1"></div>
+                <div
+                  className="flex"
+                  onMouseEnter={() => setWorkMenuOpen(true)}
+                  onMouseLeave={() => setWorkMenuOpen(false)}
+                >
+                  <Link
+                    href="/2024-programme"
+                    className={`px-6 py-2 hover:opacity-60 transition-all duration-300 text-base ${textColor}`}
+                    style={{ letterSpacing: '0.08em', fontWeight: 500 }}
+                  >
+                    2024 Programme
+                  </Link>
+                  <Link
+                    href="/2025-programme"
+                    className={`px-6 py-2 hover:opacity-60 transition-all duration-300 text-base ${textColor}`}
+                    style={{ letterSpacing: '0.08em', fontWeight: 500 }}
+                  >
+                    2025 Programme
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Main nav - right */}
       <nav className={`fixed top-0 right-0 z-50 flex text-base ${textColor}`}>
@@ -115,89 +257,21 @@ export default function Navigation({ theme = 'dark', pageTitle, pageDescription 
         >
           Workshops
         </Link>
-        <Link
-          href="/journal"
-          className={`px-6 py-3 hover:opacity-60 transition-all duration-300 ${
-            isActive('/journal') ? 'bg-[#c4342e]/10' : ''
-          }`}
-        >
-          Journal
-        </Link>
-        <Link
-          href="/artists"
-          className={`px-6 py-3 hover:opacity-60 transition-all duration-300 ${
-            isActive('/artists') ? 'bg-[#c4342e]/10' : ''
-          }`}
-        >
-          Artists
-        </Link>
         <div
           className="relative"
           onMouseEnter={() => setWorkMenuOpen(true)}
           onMouseLeave={() => setWorkMenuOpen(false)}
         >
           <Link
-            href="/work"
+            href="/artists"
             className={`px-6 py-3 hover:opacity-60 transition-all duration-300 block ${
-              isActive('/work') ? 'bg-[#c4342e]/10' : ''
+              isActive('/artists') ? 'bg-[#c4342e]/10' : ''
             }`}
           >
-            Work
+            Guest Artists
           </Link>
         </div>
       </nav>
-
-      {/* Learn submenu - full width */}
-      {learnMenuOpen && (
-        <div
-          className="fixed top-[48px] left-0 right-0 z-40 border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80"
-          onMouseEnter={() => setLearnMenuOpen(true)}
-          onMouseLeave={() => setLearnMenuOpen(false)}
-        >
-          <div className="flex justify-evenly">
-            <Link
-              href="/history"
-              className={`flex-1 text-center px-6 py-2 hover:opacity-60 transition-all duration-300 text-base ${textColor}`}
-              style={{ letterSpacing: '0.08em', fontWeight: 500 }}
-            >
-              History
-            </Link>
-            <Link
-              href="/process"
-              className={`flex-1 text-center px-6 py-2 hover:opacity-60 transition-all duration-300 text-base ${textColor}`}
-              style={{ letterSpacing: '0.08em', fontWeight: 500 }}
-            >
-              Process
-            </Link>
-          </div>
-        </div>
-      )}
-
-      {/* Work submenu - full width */}
-      {workMenuOpen && (
-        <div
-          className="fixed top-[48px] left-0 right-0 z-40 border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80"
-          onMouseEnter={() => setWorkMenuOpen(true)}
-          onMouseLeave={() => setWorkMenuOpen(false)}
-        >
-          <div className="flex justify-evenly">
-            <Link
-              href="/work/project-1"
-              className={`flex-1 text-center px-6 py-2 hover:opacity-60 transition-all duration-300 text-base ${textColor}`}
-              style={{ letterSpacing: '0.08em', fontWeight: 500 }}
-            >
-              Project One
-            </Link>
-            <Link
-              href="/work/project-2"
-              className={`flex-1 text-center px-6 py-2 hover:opacity-60 transition-all duration-300 text-base ${textColor}`}
-              style={{ letterSpacing: '0.08em', fontWeight: 500 }}
-            >
-              Project Two
-            </Link>
-          </div>
-        </div>
-      )}
     </>
   );
 }

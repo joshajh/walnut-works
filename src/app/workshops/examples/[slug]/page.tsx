@@ -68,70 +68,82 @@ export default function WorkshopExampleDetailPage({
   const galleryImages = example.gallery_images ? JSON.parse(example.gallery_images) : [];
 
   return (
-    <div className="min-h-screen bg-[#F0EEDE] noise-bg">
-      <Navigation />
+    <div className="min-h-screen bg-[#F0EEDE] noise-bg pb-[48px]">
+      <Navigation
+        pageTitle="Workshop Example"
+        pageDescription="Explore examples of our past workshop sessions and creative outcomes."
+      />
 
-      <article className="pt-32 px-12 max-w-6xl mx-auto">
+      <article className="pt-32 px-16 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Link href="/workshops" className="text-gray-600 hover:text-[#c4342e] mb-8 inline-block">
-            ← Back to Workshops
+          <h1 className="text-6xl font-serif font-bold mb-4">{example.title}</h1>
+
+          <Link href="/workshops" className="text-gray-600 hover:text-[#c4342e] transition-colors flex items-center gap-2 text-sm mb-12 inline-flex">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-current">
+              <path d="M10 4L4 10L10 16M4 10H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            Back to Workshops
           </Link>
 
-          {example.image_url && (
-            <div className="aspect-[21/9] bg-gray-200 rounded-lg overflow-hidden mb-8">
-              <img
-                src={example.image_url}
-                alt={example.title}
-                className="w-full h-full object-cover"
-              />
+          <div className="grid grid-cols-2 gap-16 mb-16">
+            {/* Left: Image */}
+            {example.image_url && (
+              <div className="aspect-[4/3] overflow-hidden relative">
+                <img
+                  src={example.image_url}
+                  alt={example.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
+              </div>
+            )}
+
+            {/* Right: Content */}
+            <div>
+              <div className="max-w-none mb-12">
+                {example.description.split('\n\n').map((paragraph, index) => (
+                  <p key={index} className="text-lg text-gray-800 leading-relaxed mb-6">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div className="pt-6 border-t border-gray-300">
+                <Link
+                  href="/workshops#booking"
+                  className="inline-block text-[#c4342e] hover:opacity-60 transition-opacity font-serif text-lg border-b border-[#c4342e]"
+                >
+                  Enquire About Workshops
+                </Link>
+              </div>
             </div>
-          )}
-
-          <h1 className="text-5xl font-serif font-bold mb-8">{example.title}</h1>
-
-          <div className="prose prose-lg max-w-none mb-12">
-            {example.description.split('\n\n').map((paragraph, index) => (
-              <p key={index} className="text-lg text-gray-800 leading-relaxed mb-6">
-                {paragraph}
-              </p>
-            ))}
           </div>
 
           {/* Gallery */}
           {galleryImages.length > 0 && (
-            <div className="mt-12">
+            <div className="mt-16">
               <h2 className="text-3xl font-serif font-bold mb-8">Gallery</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-6">
                 {galleryImages.map((imageUrl: string, index: number) => (
-                  <div key={index} className="aspect-[4/3] bg-gray-200 rounded-lg overflow-hidden">
+                  <div key={index} className="aspect-[4/3] overflow-hidden relative">
                     <img
                       src={imageUrl}
                       alt={`${example.title} - Image ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
+                    <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
                   </div>
                 ))}
               </div>
             </div>
           )}
-
-          {/* CTA */}
-          <div className="mt-12 p-8 bg-white rounded-lg shadow-lg">
-            <h2 className="text-2xl font-serif font-bold mb-4">Interested in this activity?</h2>
-            <p className="text-gray-700 mb-6">
-              We offer bespoke workshops and experiences. Get in touch to discuss your requirements.
-            </p>
-            <Link
-              href="/workshops#booking"
-              className="inline-block px-8 py-3 bg-[#c4342e] text-white rounded hover:opacity-80 transition-opacity"
-            >
-              Enquire About Workshops
-            </Link>
-          </div>
         </motion.div>
       </article>
 

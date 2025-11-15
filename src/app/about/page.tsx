@@ -2,8 +2,8 @@
 
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 interface AboutContent {
   section: string;
@@ -12,92 +12,91 @@ interface AboutContent {
 
 const defaultBlocks = [
   {
-    title: 'Crafting Excellence',
-    text: 'At Walnut Works, we believe in the power of thoughtful design. Every project begins with understanding—understanding your vision, your needs, and the story you want to tell.',
-    image: 'from-amber-200 to-amber-400',
+    title: 'Lorem Ipsum Dolor',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
+    image: '/foundry.webp',
   },
   {
-    title: 'Design Philosophy',
-    text: 'Our approach combines traditional craftsmanship with contemporary innovation. We work with natural materials, honest construction, and timeless principles that ensure our work endures.',
-    image: 'from-blue-200 to-blue-400',
+    title: 'Consectetur Adipiscing',
+    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.',
+    image: '/denise-2.webp',
   },
   {
-    title: 'Collaborative Process',
-    text: 'We see every project as a partnership. Through close collaboration, we transform ideas into tangible reality, creating spaces and objects that resonate with meaning and purpose.',
-    image: 'from-green-200 to-green-400',
+    title: 'Sed Do Eiusmod',
+    text: 'Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    image: '/laura-wilson.webp',
   },
   {
-    title: 'Sustainable Future',
-    text: 'Sustainability is not an afterthought—it is fundamental to everything we create. We are committed to practices that honor both craft and environment, building for generations to come.',
-    image: 'from-stone-200 to-stone-400',
+    title: 'Ullamco Laboris',
+    text: 'Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.',
+    image: '/julie-lockhart-1.webp',
   },
 ];
 
 function ContentBlock({ block, index }: { block: typeof defaultBlocks[0]; index: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start'],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [100, 0, 0, -100]);
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, -50]);
-
   const isEven = index % 2 === 0;
 
   return (
-    <motion.div
-      ref={ref}
-      style={{ opacity, y }}
-      className="min-h-screen flex items-center py-24 px-16"
-    >
+    <div className="min-h-screen flex items-center py-24 px-16">
       <div className={`max-w-7xl mx-auto w-full grid grid-cols-2 gap-16 items-center ${isEven ? '' : 'direction-rtl'}`}>
         {isEven ? (
           <>
-            <motion.div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
               <h2 className="text-5xl font-spectral font-bold">{block.title}</h2>
               <p className="text-xl leading-relaxed text-gray-800">{block.text}</p>
             </motion.div>
             <motion.div
-              style={{ y: imageY }}
-              className="aspect-[4/3] rounded-lg overflow-hidden"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="aspect-[4/3] rounded-lg overflow-hidden relative"
             >
-              <div className={`w-full h-full bg-gradient-to-br ${block.image}`} />
+              <img src={block.image} alt={block.title} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
             </motion.div>
           </>
         ) : (
           <>
             <motion.div
-              style={{ y: imageY }}
-              className="aspect-[4/3] rounded-lg overflow-hidden"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="aspect-[4/3] rounded-lg overflow-hidden relative"
             >
-              <div className={`w-full h-full bg-gradient-to-br ${block.image}`} />
+              <img src={block.image} alt={block.title} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
             </motion.div>
-            <motion.div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
               <h2 className="text-5xl font-spectral font-bold">{block.title}</h2>
               <p className="text-xl leading-relaxed text-gray-800">{block.text}</p>
             </motion.div>
           </>
         )}
       </div>
-    </motion.div>
+    </div>
   );
 }
 
 export default function About() {
   const [aboutContent, setAboutContent] = useState<AboutContent[]>([]);
   const [contentBlocks, setContentBlocks] = useState(defaultBlocks);
-  const [heroText, setHeroText] = useState('We are a design studio dedicated to creating meaningful experiences through thoughtful craft and authentic collaboration.');
-
-  const heroRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ['start start', 'end start'],
-  });
-
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
+  const [heroText, setHeroText] = useState('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.');
 
   useEffect(() => {
     fetchAboutContent();
@@ -132,56 +131,54 @@ export default function About() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F0EEDE] noise-bg">
+    <div className="min-h-screen bg-[#F0EEDE] noise-bg pb-[48px]">
       <Navigation pageTitle="About" />
 
-      {/* Hero Section */}
-      <motion.section
-        ref={heroRef}
-        style={{ opacity: heroOpacity, scale: heroScale }}
-        className="h-screen flex flex-col items-center justify-center"
-      >
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-8xl font-spectral font-bold mb-6"
-        >
-          About Us
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="text-xl text-gray-800 max-w-2xl text-center"
-        >
-          {heroText}
-        </motion.p>
-      </motion.section>
-
-      {/* Content Blocks */}
       <div>
-        {contentBlocks.map((block, index) => (
-          <ContentBlock key={index} block={block} index={index} />
-        ))}
-      </div>
+        {/* Hero Section */}
+        <section className="h-screen flex flex-col items-center justify-center px-16">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-8xl font-spectral font-bold mb-6"
+          >
+            About Us
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-xl text-gray-800 max-w-2xl text-center"
+          >
+            {heroText}
+          </motion.p>
+        </section>
 
-      {/* Closing Section */}
-      <section className="min-h-screen flex items-center justify-center px-16">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="max-w-4xl text-center"
-        >
-          <h2 className="text-6xl font-spectral font-bold mb-8">Let&apos;s Create Together</h2>
-          <p className="text-2xl leading-relaxed text-gray-800">
-            We are always open to new collaborations and conversations.
-            Reach out to discuss your next project.
-          </p>
-        </motion.div>
-      </section>
+        {/* Content Blocks */}
+        <div>
+          {contentBlocks.map((block, index) => (
+            <ContentBlock key={index} block={block} index={index} />
+          ))}
+        </div>
+
+        {/* Closing Section */}
+        <section className="min-h-screen flex items-center justify-center px-16">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="max-w-4xl text-center"
+          >
+            <h2 className="text-6xl font-spectral font-bold mb-8">Lorem Ipsum Dolor Sit</h2>
+            <p className="text-2xl leading-relaxed text-gray-800">
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+              Nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </motion.div>
+        </section>
+      </div>
 
       <Footer />
     </div>

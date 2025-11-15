@@ -68,68 +68,76 @@ export default function WorkshopDetailPage({
   }
 
   return (
-    <div className="min-h-screen bg-[#F0EEDE] noise-bg">
-      <Navigation />
-
-      <article className="pt-32 px-12 max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <Link href="/workshops" className="text-gray-600 hover:text-[#c4342e] mb-8 inline-block">
-            ← Back to Workshops
-          </Link>
-
-          {workshop.image_url && (
-            <div className="aspect-[21/9] bg-gray-200 rounded-lg overflow-hidden mb-8">
-              <img
-                src={workshop.image_url}
-                alt={workshop.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          )}
-
-          {workshop.date && workshop.location && (
-            <div className="mb-6">
-              <p className="text-sm text-gray-600 mb-2">
+    <div className="min-h-screen bg-[#F0EEDE] noise-bg pb-[48px]">
+      <Navigation
+        pageTitle="Workshop"
+        pageDescription={
+          workshop.date && workshop.location
+            ? (
+              <span className="text-[#c4342e] font-medium">
                 {new Date(workshop.date).toLocaleDateString('en-GB', {
                   weekday: 'long',
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric',
-                })}
-                {' • '}
-                {workshop.location}
-              </p>
+                })} • {workshop.location}
+              </span>
+            )
+            : undefined
+        }
+      />
+
+      <article className="pt-32 px-16 max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className="text-6xl font-serif font-bold mb-4">{workshop.title}</h1>
+
+          <Link href="/workshops" className="text-gray-600 hover:text-[#c4342e] transition-colors flex items-center gap-2 text-sm mb-12 inline-flex">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-current">
+              <path d="M10 4L4 10L10 16M4 10H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            Back to Workshops
+          </Link>
+
+          <div className="grid grid-cols-2 gap-16 mb-16">
+            {/* Left: Image */}
+            {workshop.image_url && (
+              <div className="aspect-[4/3] overflow-hidden relative">
+                <img
+                  src={workshop.image_url}
+                  alt={workshop.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
+              </div>
+            )}
+
+            {/* Right: Content */}
+            <div>
+              <div className="max-w-none">
+                {workshop.description.split('\n\n').map((paragraph, index) => (
+                  <p key={index} className="text-lg text-gray-800 leading-relaxed mb-6">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
+              {workshop.is_upcoming === 1 && (
+                <div className="mt-12 pt-6 border-t border-gray-300">
+                  <Link
+                    href="/workshops#booking"
+                    className="inline-block text-[#c4342e] hover:opacity-60 transition-opacity font-serif text-lg border-b border-[#c4342e]"
+                  >
+                    Book This Workshop
+                  </Link>
+                </div>
+              )}
             </div>
-          )}
-
-          <h1 className="text-5xl font-serif font-bold mb-8">{workshop.title}</h1>
-
-          <div className="prose prose-lg max-w-none">
-            {workshop.description.split('\n\n').map((paragraph, index) => (
-              <p key={index} className="text-lg text-gray-800 leading-relaxed mb-6">
-                {paragraph}
-              </p>
-            ))}
           </div>
-
-          {workshop.is_upcoming === 1 && (
-            <div className="mt-12 p-8 bg-white rounded-lg shadow-lg">
-              <h2 className="text-2xl font-serif font-bold mb-4">Interested in this workshop?</h2>
-              <p className="text-gray-700 mb-6">
-                Get in touch with us to learn more or register your interest.
-              </p>
-              <Link
-                href="/workshops#booking"
-                className="inline-block px-8 py-3 bg-[#c4342e] text-white rounded hover:opacity-80 transition-opacity"
-              >
-                Book This Workshop
-              </Link>
-            </div>
-          )}
         </motion.div>
       </article>
 
