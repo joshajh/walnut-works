@@ -1,122 +1,132 @@
-@import "tailwindcss";
-@import "leaflet/dist/leaflet.css";
+@import 'tailwindcss';
+@import 'leaflet/dist/leaflet.css';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #ffffff;
+    --foreground: #171717;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-geist-mono);
-  --font-serif: var(--font-pt-serif);
-  --color-brand-red: #c4342e;
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-inter);
+    --font-mono: var(--font-geist-mono);
+    --font-serif: var(--font-pt-serif);
+    --color-brand-red: #c4342e;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-weight: 400;
-  letter-spacing: -0.011em;
-  line-height: 1.6;
+    background: var(--background);
+    color: var(--foreground);
+    font-family:
+        var(--font-inter),
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.011em;
+    line-height: 1.6;
 }
 
 /* Texture overlay */
 .noise-bg::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 1;
-  z-index: -1;
-  background-image: url('/dotnoise-light-grey.png');
-  background-repeat: repeat;
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 1;
+    z-index: -1;
+    background-image: url('/dotnoise-light-grey.png');
+    background-repeat: repeat;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #171717;
-  font-family: var(--font-pt-serif), Georgia, serif;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #171717;
+    font-family: var(--font-pt-serif), Georgia, serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
 }
 
 h1 {
-  letter-spacing: 0.015em;
-  position: relative;
-  color: #171717;
-  background-image: url('/dotnoise-light-grey.png');
-  background-repeat: repeat;
-  background-size: auto;
-  background-blend-mode: overlay;
-  background-clip: text;
-  -webkit-background-clip: text;
+    letter-spacing: 0.015em;
+    position: relative;
+    color: #171717;
+    background-image: url('/dotnoise-light-grey.png');
+    background-repeat: repeat;
+    background-size: auto;
+    background-blend-mode: overlay;
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
 h2 {
-  font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2rem, 5vw, 4rem);
 }
 
 h3 {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 nav {
-  font-variant: small-caps;
-  letter-spacing: 0.08em;
-  font-weight: 500;
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+    font-weight: 500;
 }
 
 /* Custom minimal scrollbar styling */
 * {
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #c4342e #F0EEDE; /* thumb and track color for Firefox */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #c4342e #f0eede; /* thumb and track color for Firefox */
 }
 
 /* Webkit browsers (Chrome, Safari, Edge) */
 *::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+    width: 8px;
+    height: 8px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #F0EEDE;
+    background: #f0eede;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #c4342e;
-  border-radius: 4px;
+    background: #c4342e;
+    border-radius: 4px;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: #a02d27;
+    background: #a02d27;
 }
 
 /* Hide scrollbars but keep functionality */
 .hide-scrollbar {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
 }
 
 .hide-scrollbar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+    display: none; /* Chrome, Safari, Opera */
 }
 
 /* Ensure Section 2 stops scroll snap */
 .snap-section-scrollable {
-  scroll-snap-stop: always;
-  overscroll-behavior: contain;
+    scroll-snap-stop: always;
+    overscroll-behavior: contain;
 }

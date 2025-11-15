@@ -21,7 +21,7 @@ export default function BronzeSculpture() {
             Bronze Sculpture from the Beginning
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
-            From ancient fires to modern foundries, bronze has shaped human civilization for over 7,000 years.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </motion.div>
       </section>
@@ -39,13 +39,13 @@ export default function BronzeSculpture() {
               The Discovery
             </h2>
             <p className="text-lg leading-relaxed mb-6 text-gray-800">
-              Modern historians believe that setting up stones around a fire enabled early people to extract metals from rocks. The earliest bronze artefacts were found in the Middle East and East Asia approximately 7000 years ago. Bronze artefacts were also found at this time in parts of Serbia. The historical Bronze Age in Britain started approximately 5000 years ago.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
             <p className="text-lg leading-relaxed mb-6 text-gray-800">
-              Bronze was discovered by mixing two weak metals—which were absolutely no good for making tools because they had no tensile strength. Copper and tin makes a stronger alloy material: bronze. Copper has been mixed to make other bronze alloys; lead and arsenic as well as tin. Lead until very recently was used in a bronze alloy.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
             <p className="text-lg leading-relaxed text-gray-800">
-              Tools and weapons, armour and fittings for chariots as well as musical instruments were made of bronze in the ancient world. In the later Bronze Age cannons were invented in East Asia. Sparks in bronze cannons do not cause explosions or erode in water. Bronze is still used today for electrical components, weapons, anchors and nautical equipment.
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
             </p>
           </motion.div>
         </div>
@@ -90,10 +90,10 @@ export default function BronzeSculpture() {
               The Smith as Sorcerer
             </h2>
             <p className="text-lg leading-relaxed mb-6 text-gray-800">
-              In her book 'Hoards Hidden History' published by The British Museum Press, Eleanor Ghey writes: "Trade spread the knowledge throughout the ancient world. Many later Bronze Age hordes were composed of scraps of objects to be recycled as raw material for metal work and have traditionally been referred to as founders hordes. These groups tend to include ingots and unfinished items. It is likely that we have here the evidence for Smiths at work—this is not to say these deposits were not seen as having a special character. In some societies the Smith is seen as the possessor of supernatural powers."
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
             <p className="text-lg leading-relaxed text-gray-800">
-              As casting methods improved, small figurative sculptures began to appear. Bronze expands when heated and fills all cavities in the mould, which gives the surface of the material its distinctive texture. The earliest bronze figurative sculptures appear in Mohenjo-daro, now modern Pakistan, circa 2500 BCE.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
             </p>
           </motion.div>
         </div>
@@ -112,10 +112,10 @@ export default function BronzeSculpture() {
               Ancient Masterworks
             </h2>
             <p className="text-lg leading-relaxed mb-6 text-gray-800">
-              Traces of this early civilisation were found throughout India and modern day Pakistan. A young female and the head of a man were discovered by archaeologists in the 1920's. They were kept together for many years but separated during the partition of British India—the young female moving to a Museum in Pakistan and the male head staying in Delhi.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
             </p>
             <p className="text-lg leading-relaxed text-gray-800">
-              The ancient Greeks developed the casting process to make full-sized figurative sculptures. Few Greek full-sized statues survive, the bronze being repurposed and recycled. Romans emulated the Greeks and bronze was used for all sizes of statues and statuettes, reproducing sculptures using moulds to make multiple figures and figurines.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
             </p>
           </motion.div>
         </div>
@@ -162,13 +162,13 @@ export default function BronzeSculpture() {
               Medieval Splendor and Renaissance Revival
             </h2>
             <p className="text-lg leading-relaxed mb-6 text-gray-800">
-              In the European mediaeval period, bronze statues and decorations would have been found mainly in religious contexts, churches and palaces. During the Renaissance, artists started to rediscover Roman and Greek sculpture and architecture and create their own large-scale sculpture. The sculpture was patronised by powerful families in Europe and the Italian kingdoms.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
             </p>
             <p className="text-lg leading-relaxed mb-6 text-gray-800">
-              The horses of Saint Marks arrived in Venice in 1204 after being looted from Constantinople during the fourth crusade. The crusaders who were equipped by the great Venetian shipbuilders took a detour from the Holy Land (modern Palestine) and raided Constantinople (modern Istanbul). They used this loot to pay their debt to the Venice boatbuilders. The payment included the ancient horses; originally part of an ancient stadium and were placed in the grand St. Mark's Square.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
             <p className="text-lg leading-relaxed text-gray-800">
-              Rich and powerful families of the Italian kingdoms became the patrons of artists, fuelling the rediscovery of bronze casting techniques throughout Europe.
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
             </p>
           </motion.div>
         </div>
@@ -213,16 +213,16 @@ export default function BronzeSculpture() {
               Bronze in the Age of Empire
             </h2>
             <p className="text-lg leading-relaxed mb-6 text-gray-800">
-              In the 18th century, interest in Italian and Greek art and architecture was prominent in British culture. Wealthy young men, as a way of finishing their education, went on 'The Grand Tour' around the cultural cities of Europe. They bought souvenirs of art including bronze statues and statuettes back to fill the collections of stately homes and museums.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
             </p>
             <p className="text-lg leading-relaxed mb-6 text-gray-800">
-              Patronage of large-scale public sculpture was a way of showing power in public spaces. The wealth of the British was often gained as a result of slavery, colonialism and the new technology impacting the Industrial Revolution. Public statues were made of important and powerful people. These were mainly of men who were generals, industrialists, politicians or royalty. Queen Victoria being an exception—sculptures of her were placed throughout the British Empire.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
             </p>
             <p className="text-lg leading-relaxed mb-6 text-gray-800">
-              Women were often represented in sculpture as mythical creatures, nymphs and fairies. Queen Victoria herself often bought her husband sculptures of semi-naked woodland nymphs bordering on erotica. Sculptures of nymphs, semi-clad nubile figures of myths and legends were very popular with the Victorian public, who were notoriously prudish, covering furniture legs so as not to be indecent.
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.
             </p>
             <p className="text-lg leading-relaxed text-gray-800">
-              The statue commemorating the slave owner Edward Coulson, a 17th century slaveowner, was toppled in 2020 by protesters into the Bristol harbour. There is a debate today on how we should view and show these works.
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
             </p>
           </motion.div>
         </div>
@@ -241,16 +241,16 @@ export default function BronzeSculpture() {
               Postwar Britain and the Golden Age
             </h2>
             <p className="text-lg leading-relaxed mb-6 text-gray-800">
-              At the beginning of the 20th century, foundries were set up to produce war memorials to honour the First World War dead. There were huge shifts in the arts with modernism in Europe.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <p className="text-lg leading-relaxed mb-6 text-gray-800">
-              Postwar Britain—British art and design exploded in the 50s and 60s with art colleges reflecting the new modernist teaching. Britain was the centre of the Art World. The festival of Britain introduced new ideas of sculpture, architecture and textiles, ceramics and music. Colleges were set up reflecting this new patronage from the postwar government encouraging the rebuilding of industry and infrastructure. The Arts Council was established in 1946 to support and develop arts and culture in Britain.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             </p>
             <p className="text-lg leading-relaxed mb-6 text-gray-800">
-              Architecture and town planning often included public modern sculpture. Harlow Sculpture Town architect Sir Frederick Gibberd designed areas where people could step out of their front door and find a Barbara Hepworth sculpture. Originally built for people not cars, sculpture and landscape informed his designs and planning. Students from Harlow College could take a few steps away from the college and be surrounded by bronze sculpture in the water gardens: Liz Frink, Henry Moore, Rodin. In the area walking towards the marketplace there is a Ralph Brown, a Lynn Chadwick, amongst others.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
             </p>
             <p className="text-lg leading-relaxed text-gray-800">
-              'Old Flo' was sold by Henry Moore at a modest price to Tower Hamlets Council to say thank you to the people of the East End after the war and placed outside council flats. Beloved by local children and tenants, it was moved to Yorkshire Sculpture Park after the council tried to sell it, causing a scandal. Recently it was moved to a site in Canary Wharf surrounded by the financial district. Worth millions and apparently expensive to maintain, it is deemed a temporary safe site.
+              Totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
             </p>
           </motion.div>
         </div>
@@ -269,13 +269,13 @@ export default function BronzeSculpture() {
               Preserving a Living Tradition
             </h2>
             <p className="text-lg leading-relaxed mb-6 text-gray-800">
-              Artist tutors from the 40's, 50's, and 60's have influenced the last decades of the 20th century and have in turn influenced modern bronze sculptors such as Gavin Turk, Anish Kapoor, Grayson Perry, Antony Gormley, Anya Gallaccio, and Louise Bourgeois, to name a few.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
             </p>
             <p className="text-lg leading-relaxed mb-6 text-gray-800">
-              Today college foundries are disappearing. Commercial arts foundries often use ceramic shell to process sculpture which is cost effective in mechanised foundries. The lost wax process using Luto is at risk of becoming obsolete in college foundries—this hands-on method used by Renaissance founders is in danger of becoming a heritage craft.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
             <p className="text-lg leading-relaxed text-gray-800">
-              Working with artists directly with this process, we wish to share our knowledge and skill with our resident artists to experience for themselves the connection to thousands of years of bronze casting tradition.
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto.
             </p>
           </motion.div>
         </div>
