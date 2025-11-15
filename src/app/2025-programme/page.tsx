@@ -99,10 +99,10 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                 pageTitle="2025 Programme"
                 pageDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                 tabButtons={
-                    <div className="flex gap-4">
+                    <div className="flex gap-2 md:gap-4 overflow-x-auto">
                         <button
                             onClick={() => setActiveTab('programme')}
-                            className={`px-6 py-2 font-serif text-lg transition-all duration-300 ${
+                            className={`px-3 md:px-6 py-2 font-serif text-sm md:text-lg whitespace-nowrap transition-all duration-300 ${
                                 activeTab === 'programme'
                                     ? 'border-b-2 border-[#c4342e] text-[#c4342e]'
                                     : 'text-gray-600 hover:text-gray-800'
@@ -112,7 +112,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                         </button>
                         <button
                             onClick={() => setActiveTab('guest-artists')}
-                            className={`px-6 py-2 font-serif text-lg transition-all duration-300 ${
+                            className={`px-3 md:px-6 py-2 font-serif text-sm md:text-lg whitespace-nowrap transition-all duration-300 ${
                                 activeTab === 'guest-artists'
                                     ? 'border-b-2 border-[#c4342e] text-[#c4342e]'
                                     : 'text-gray-600 hover:text-gray-800'
@@ -122,17 +122,17 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                         </button>
                         <button
                             onClick={() => setActiveTab('care-homes')}
-                            className={`px-6 py-2 font-serif text-lg transition-all duration-300 ${
+                            className={`px-3 md:px-6 py-2 font-serif text-sm md:text-lg whitespace-nowrap transition-all duration-300 ${
                                 activeTab === 'care-homes'
                                     ? 'border-b-2 border-[#c4342e] text-[#c4342e]'
                                     : 'text-gray-600 hover:text-gray-800'
                             }`}
                         >
-                            Woodbridge Care Homes
+                            Care Homes
                         </button>
                         <button
                             onClick={() => setActiveTab('orford-primary')}
-                            className={`px-6 py-2 font-serif text-lg transition-all duration-300 ${
+                            className={`px-3 md:px-6 py-2 font-serif text-sm md:text-lg whitespace-nowrap transition-all duration-300 ${
                                 activeTab === 'orford-primary'
                                     ? 'border-b-2 border-[#c4342e] text-[#c4342e]'
                                     : 'text-gray-600 hover:text-gray-800'
@@ -144,7 +144,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                 }
             />
 
-            <div className="pt-48 px-8 max-w-7xl mx-auto">
+            <div className="pt-32 md:pt-48 px-4 md:px-8 max-w-7xl mx-auto">
                 {/* Content */}
                 {Object.entries(sections).map(([key, section]) => (
                     <motion.div
@@ -157,9 +157,9 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                         transition={{ duration: 0.6 }}
                         className={activeTab === key ? 'block' : 'hidden'}
                     >
-                        <div className="grid grid-cols-2 gap-12 mb-20 items-start">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-20 items-start">
                             {/* Left column: Image Grid */}
-                            <div className="grid grid-cols-4 gap-2 max-h-[calc(100vh-250px)] overflow-y-auto pr-4">
+                            <div className="grid grid-cols-3 md:grid-cols-4 gap-1 md:gap-2 max-h-[50vh] md:max-h-[calc(100vh-250px)] overflow-y-auto pr-0 md:pr-4">
                                 {section.images.map((img, index) => (
                                     <div
                                         key={index}
@@ -178,11 +178,11 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                             </div>
 
                             {/* Right column: Text */}
-                            <div className="max-h-[calc(100vh-250px)] overflow-y-auto pr-4">
-                                <h2 className="text-4xl font-serif font-bold mb-6 text-gray-800">
+                            <div className="max-h-auto md:max-h-[calc(100vh-250px)] overflow-y-auto pr-0 md:pr-4">
+                                <h2 className="text-2xl md:text-4xl font-serif font-bold mb-4 md:mb-6 text-gray-800">
                                     {section.title}
                                 </h2>
-                                <div className="text-lg leading-relaxed text-gray-700 whitespace-pre-line">
+                                <div className="text-base md:text-lg leading-relaxed text-gray-700 whitespace-pre-line">
                                     {section.text}
                                 </div>
                             </div>

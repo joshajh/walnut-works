@@ -11,27 +11,27 @@ export default function Home() {
             <Navigation />
 
             {/* Section 1: Hero */}
-            <section className="h-screen snap-start snap-always flex items-end justify-end px-6 py-16 relative">
+            <section className="h-screen snap-start snap-always flex items-end justify-end px-4 md:px-6 py-12 md:py-16 relative">
                 {/* Text - bottom right */}
                 <div className="text-right">
-                    <h1 className="text-7xl font-spectral font-normal drop-shadow-md !text-[#c4342e]">
+                    <h1 className="text-4xl md:text-7xl font-spectral font-normal drop-shadow-md !text-[#c4342e]">
                         Walnut Works
                     </h1>
                     <p
-                        className="text-base tracking-widest mt-2 text-gray-800 uppercase"
+                        className="text-xs md:text-base tracking-widest mt-2 text-gray-800 uppercase"
                         style={{ letterSpacing: '0.08em', fontWeight: 500 }}
                     >
                         Master bronze foundry. Suffolk, UK.
                     </p>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 border-b border-gray-900 mx-6 my-8"></div>
+                <div className="absolute bottom-0 left-0 right-0 border-b border-gray-900 mx-4 md:mx-6 my-6 md:my-8"></div>
             </section>
 
             {/* Section 2: Introduction */}
-            <section className="h-screen snap-start snap-always flex items-center justify-center px-6 overflow-hidden relative pt-[48px]">
-                {/* Section Title Tab */}
+            <section className="min-h-screen snap-start snap-always flex items-center justify-center px-4 md:px-6 overflow-hidden relative pt-[48px] py-12 md:py-0">
+                {/* Section Title Tab - Vertical on desktop, horizontal on mobile */}
                 <div
-                    className="absolute top-[48px] left-0 border-r border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80"
+                    className="absolute top-[48px] left-0 border-r border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80 hidden md:block"
                     style={{ writingMode: 'vertical-rl' }}
                 >
                     <div
@@ -42,7 +42,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="max-w-6xl grid grid-cols-2 gap-12 items-center">
+                <div className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center w-full">
                     {/* Left column: Text */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -51,14 +51,14 @@ export default function Home() {
                         viewport={{ once: true }}
                         className="flex flex-col justify-center"
                     >
-                        <h2 className="text-4xl font-serif font-bold mb-8 text-gray-800">
+                        <h2 className="text-2xl md:text-4xl font-serif font-bold mb-4 md:mb-8 text-gray-800">
                             Lorem Ipsum Dolor Sit
                         </h2>
-                        <p className="text-xl leading-relaxed mb-8 text-gray-800">
+                        <p className="text-base md:text-xl leading-relaxed mb-4 md:mb-8 text-gray-800">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua.
                         </p>
-                        <p className="text-xl leading-relaxed text-gray-800">
+                        <p className="text-base md:text-xl leading-relaxed text-gray-800">
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
                             ut aliquip ex ea commodo consequat.
                         </p>
@@ -70,7 +70,7 @@ export default function Home() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="grid grid-cols-2 gap-4 max-w-md"
+                        className="grid grid-cols-2 gap-2 md:gap-4 max-w-md mx-auto md:mx-0"
                     >
                         <div className="w-full aspect-square flex items-center justify-center">
                             <img
@@ -105,10 +105,10 @@ export default function Home() {
             </section>
 
             {/* Section 3: Explore */}
-            <section className="min-h-screen snap-start snap-always flex items-center justify-center px-6 py-16 relative pt-[48px]">
-                {/* Section Title Tab */}
+            <section className="min-h-screen snap-start snap-always flex items-center justify-center px-4 md:px-6 py-12 md:py-16 relative pt-[48px]">
+                {/* Section Title Tab - Desktop only */}
                 <div
-                    className="absolute top-[48px] left-0 border-r border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80"
+                    className="absolute top-[48px] left-0 border-r border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80 hidden md:block"
                     style={{ writingMode: 'vertical-rl' }}
                 >
                     <div
@@ -120,7 +120,7 @@ export default function Home() {
                 </div>
 
                 <div className="max-w-6xl w-full">
-                    <div className="space-y-6">
+                    <div className="space-y-4 md:space-y-6">
                         {/* About Card */}
                         <motion.article
                             initial={{ opacity: 0, y: 20 }}

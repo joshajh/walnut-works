@@ -20,6 +20,7 @@ export default function Navigation({
 }: NavigationProps) {
     const [workMenuOpen, setWorkMenuOpen] = useState(false)
     const [learnMenuOpen, setLearnMenuOpen] = useState(false)
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const pathname = usePathname()
 
     const textColor = theme === 'light' ? 'text-gray-100' : 'text-gray-800'
@@ -67,7 +68,30 @@ export default function Navigation({
                         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                         className="fixed top-[48px] left-0 right-0 z-20"
                     >
-                        <div className="flex items-start">
+                        {/* Mobile Layout - Horizontal */}
+                        <div className="md:hidden">
+                            <div className="backdrop-blur-md bg-[#F0EEDE]/80 border-b border-gray-300">
+                                <div
+                                    className="px-4 py-3 text-[#c4342e] font-serif text-base"
+                                    style={{ letterSpacing: '0.08em', fontWeight: 500 }}
+                                >
+                                    {pageTitle}
+                                </div>
+                            </div>
+                            {pageDescription && !learnMenuOpen && !workMenuOpen && (
+                                <div className="px-4 py-3 text-gray-700 text-sm leading-relaxed border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80">
+                                    {pageDescription}
+                                </div>
+                            )}
+                            {tabButtons && (
+                                <div className="border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80 overflow-x-auto">
+                                    {tabButtons}
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Desktop Layout - Vertical Tab */}
+                        <div className="hidden md:flex items-start">
                             {/* Title Tab - Vertical */}
                             <div
                                 className="flex-shrink-0 backdrop-blur-md bg-[#F0EEDE]/80 border-r border-b border-gray-300"
@@ -243,8 +267,38 @@ export default function Navigation({
                 </div>
             )}
 
-            {/* Main nav - right */}
-            <nav className={`fixed top-0 right-0 z-50 flex text-base ${textColor}`}>
+            {/* Hamburger button - mobile only */}
+            <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="fixed top-0 right-0 z-50 px-6 py-3 md:hidden text-gray-800"
+                aria-label="Toggle menu"
+            >
+                <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    {mobileMenuOpen ? (
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M6 18L18 6M6 6l12 12"
+                        />
+                    ) : (
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    )}
+                </svg>
+            </button>
+
+            {/* Main nav - desktop only */}
+            <nav className={`fixed top-0 right-0 z-50 hidden md:flex text-base ${textColor}`}>
                 <Link
                     href="/about"
                     className={`px-6 py-3 hover:opacity-60 transition-all duration-300 ${
@@ -296,6 +350,93 @@ export default function Navigation({
                     </div>
                 </div>
             </nav>
+
+            {/* Mobile menu */}
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <motion.div
+                        initial={{ x: '100%' }}
+                        animate={{ x: 0 }}
+                        exit={{ x: '100%' }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        className="fixed top-[48px] right-0 bottom-0 w-full bg-[#F0EEDE] z-40 md:hidden overflow-y-auto"
+                    >
+                        <nav className="flex flex-col p-6 space-y-2">
+                            <Link
+                                href="/about"
+                                onClick={() => setMobileMenuOpen(false)}
+                                className={`px-4 py-3 text-lg hover:bg-[#c4342e]/10 transition-all duration-300 ${
+                                    isActive('/about') ? 'bg-[#c4342e]/10' : ''
+                                }`}
+                            >
+                                About
+                            </Link>
+
+                            {/* Learn submenu */}
+                            <div className="border-t border-gray-300 pt-2">
+                                <div className="px-4 py-3 text-lg font-semibold text-gray-600">
+                                    Learn
+                                </div>
+                                <Link
+                                    href="/bronze-sculpture"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="px-8 py-2 text-base hover:bg-[#c4342e]/10 transition-all duration-300 block"
+                                >
+                                    History
+                                </Link>
+                                <Link
+                                    href="/casting-process"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="px-8 py-2 text-base hover:bg-[#c4342e]/10 transition-all duration-300 block"
+                                >
+                                    Process
+                                </Link>
+                            </div>
+
+                            <Link
+                                href="/bespoke-casting"
+                                onClick={() => setMobileMenuOpen(false)}
+                                className={`px-4 py-3 text-lg hover:bg-[#c4342e]/10 transition-all duration-300 ${
+                                    isActive('/bespoke-casting') ? 'bg-[#c4342e]/10' : ''
+                                }`}
+                            >
+                                Bespoke Casting
+                            </Link>
+
+                            <Link
+                                href="/workshops"
+                                onClick={() => setMobileMenuOpen(false)}
+                                className={`px-4 py-3 text-lg hover:bg-[#c4342e]/10 transition-all duration-300 ${
+                                    isActive('/workshops') ? 'bg-[#c4342e]/10' : ''
+                                }`}
+                            >
+                                Workshops
+                            </Link>
+
+                            {/* Guest Artists submenu */}
+                            <div className="border-t border-gray-300 pt-2">
+                                <div className="px-4 py-3 text-lg font-semibold text-gray-600">
+                                    Guest Artists
+                                </div>
+                                <Link
+                                    href="/2024-programme"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="px-8 py-2 text-base hover:bg-[#c4342e]/10 transition-all duration-300 block"
+                                >
+                                    2024 Programme
+                                </Link>
+                                <Link
+                                    href="/2025-programme"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="px-8 py-2 text-base hover:bg-[#c4342e]/10 transition-all duration-300 block"
+                                >
+                                    2025 Programme
+                                </Link>
+                            </div>
+                        </nav>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
     )
 }

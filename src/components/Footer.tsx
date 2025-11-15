@@ -134,9 +134,9 @@ export default function Footer() {
 
             {/* Footer Bar */}
             <footer className="fixed bottom-0 left-0 right-0 z-40 border-t border-gray-300 bg-[#F0EEDE]/80 backdrop-blur-md h-[48px]">
-                <div className="h-full flex items-center justify-between px-6">
+                <div className="h-full flex items-center justify-between px-4 md:px-6">
                     {/* Left Side - Visit and Credits */}
-                    <div className="flex items-center gap-6">
+                    <div className="flex items-center gap-3 md:gap-6">
                         <button
                             onClick={() => setVisitOpen(true)}
                             className="text-xs text-gray-800 hover:opacity-60 transition-opacity"
@@ -146,13 +146,13 @@ export default function Footer() {
                         </button>
                         <button
                             onClick={() => setShowCredits(!showCredits)}
-                            className="text-xs text-gray-800 hover:opacity-60 transition-opacity"
+                            className="text-xs text-gray-800 hover:opacity-60 transition-opacity hidden md:inline-block"
                             style={{ letterSpacing: '0.08em', fontWeight: 500 }}
                         >
                             Credits
                         </button>
 
-                        {/* Credits Text */}
+                        {/* Credits Text - Desktop only */}
                         <AnimatePresence>
                             {showCredits && (
                                 <motion.span
@@ -160,7 +160,7 @@ export default function Footer() {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -10 }}
                                     transition={{ duration: 0.3 }}
-                                    className="text-xs text-gray-600"
+                                    className="text-xs text-gray-600 hidden md:inline"
                                     style={{ letterSpacing: '0.08em', fontWeight: 400 }}
                                 >
                                     Design and development by Possible Worlds
@@ -171,16 +171,19 @@ export default function Footer() {
 
                     {/* Right Side - Weather */}
                     <div
-                        className="text-xs text-gray-600"
+                        className="text-xs text-gray-600 text-right"
                         style={{ letterSpacing: '0.08em', fontWeight: 400 }}
                     >
                         {weather ? (
-                            <span>
+                            <span className="hidden md:inline">
                                 Butley Mills is currently {weather.temperature} degrees,{' '}
                                 {weather.condition}
                             </span>
-                        ) : (
-                            <span>Loading weather...</span>
+                        ) : null}
+                        {weather && (
+                            <span className="md:hidden">
+                                {weather.temperature}°, {weather.condition}
+                            </span>
                         )}
                     </div>
                 </div>
