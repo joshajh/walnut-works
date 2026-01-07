@@ -16,8 +16,6 @@ export default function CastingProcess() {
                     className="absolute inset-0 bg-cover bg-center opacity-20"
                     style={{ backgroundImage: 'url(/foundry.webp)' }}
                 />
-                {/* Red Duotone Overlay */}
-                <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
                 {/* Dithering Texture */}
                 <div
                     className="absolute inset-0 opacity-40 mix-blend-overlay"

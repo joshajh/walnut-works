@@ -109,10 +109,8 @@ export default function WorkshopDetailPage({
                 <img
                   src={workshop.image_url}
                   alt={workshop.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
-                <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
               </div>
             )}
 

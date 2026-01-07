@@ -1,30 +1,36 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 
+const PDFFlipBook = dynamic(() => import('@/components/PDFFlipBook'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center h-[60vh]">
+      <div className="text-gray-600 font-serif text-lg">Loading...</div>
+    </div>
+  ),
+});
+
 export default function Programme2024Page() {
   return (
-    <div className="bg-[#F0EEDE] noise-bg">
-      <Navigation pageTitle="2024 Programme" />
+    <div className="min-h-screen bg-[#F0EEDE] noise-bg pb-[48px]">
+      <Navigation
+        pageTitle="Artists in Residence 2024"
+        pageDescription="Explore our 2024 programme showcasing the creative work and community engagement from the past year."
+      />
 
-      {/* Under Construction */}
-      <section className="min-h-screen flex items-center justify-center px-8 pt-24">
+      <div className="pt-32 md:pt-48 px-4 md:px-8 max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center max-w-3xl"
+          transition={{ duration: 0.6 }}
         >
-          <h1 className="text-5xl md:text-7xl font-serif font-normal leading-tight mb-8 text-gray-800">
-            Under Construction
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-12">
-            We're currently developing this page. Please check back soon for information about our 2024 programme.
-          </p>
+          <PDFFlipBook pdfUrl="/walnut-works-24.pdf" />
         </motion.div>
-      </section>
+      </div>
 
       <Footer />
     </div>

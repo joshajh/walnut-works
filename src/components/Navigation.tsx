@@ -273,12 +273,7 @@ export default function Navigation({
                 className="fixed top-0 right-0 z-50 px-6 py-3 md:hidden text-gray-800"
                 aria-label="Toggle menu"
             >
-                <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {mobileMenuOpen ? (
                         <path
                             strokeLinecap="round"
@@ -346,7 +341,7 @@ export default function Navigation({
                             isActive('/artists') ? 'bg-[#c4342e]/10' : ''
                         }`}
                     >
-                        Guest Artists
+                        Artists in Residence
                     </div>
                 </div>
             </nav>

@@ -65,10 +65,8 @@ export default function JournalPage() {
                       <img
                         src={entry.image_url}
                         alt={entry.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
                     </div>
                   )}
                   <div className="md:w-3/5">

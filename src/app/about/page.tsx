@@ -12,24 +12,19 @@ interface AboutContent {
 
 const defaultBlocks = [
   {
-    title: 'Lorem Ipsum Dolor',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
+    title: 'Our Story',
+    text: 'Walnut Works was established in 2019. The idea had been formulated many years earlier to utilise Kabir\'s 30 years of experience working in commercial fine art foundries with prominent 20th and 21st century artists and Vicky\'s experience in schools and as a founder member, gallery organiser, and curator of five bronze shows at Greyfriars Art Space in King\'s Lynn.',
     image: '/foundry.webp',
   },
   {
-    title: 'Consectetur Adipiscing',
-    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.',
+    title: 'The Craft',
+    text: 'Kabir wanted to encourage artists and give them the opportunity to work directly with the processes of fire \'cire perdue\' or lost wax casting mainly utilising direct burning out technique used in his own sculpture practice. Both artists have used the medium of bronze in their own practice as sculptors since 1985.',
     image: '/denise-2.webp',
   },
   {
-    title: 'Sed Do Eiusmod',
-    text: 'Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    title: 'Workshops',
+    text: 'Vicky has organised group wax modelling workshops for all ages and practices nationwide using her wax to bronze kits. Over the years we have developed a joint teaching facility offering a one-to-one course of consultation and group workshops for adults and children nationwide.',
     image: '/laura-wilson.webp',
-  },
-  {
-    title: 'Ullamco Laboris',
-    text: 'Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.',
-    image: '/julie-lockhart-1.webp',
   },
 ];
 
@@ -58,9 +53,7 @@ function ContentBlock({ block, index }: { block: typeof defaultBlocks[0]; index:
               viewport={{ once: true }}
               className="aspect-[4/3] rounded-lg overflow-hidden relative"
             >
-              <img src={block.image} alt={block.title} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
+              <img src={block.image} alt={block.title} className="w-full h-full object-contain" />
             </motion.div>
           </>
         ) : (
@@ -72,9 +65,7 @@ function ContentBlock({ block, index }: { block: typeof defaultBlocks[0]; index:
               viewport={{ once: true }}
               className="aspect-[4/3] rounded-lg overflow-hidden relative"
             >
-              <img src={block.image} alt={block.title} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
+              <img src={block.image} alt={block.title} className="w-full h-full object-contain" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -96,7 +87,7 @@ function ContentBlock({ block, index }: { block: typeof defaultBlocks[0]; index:
 export default function About() {
   const [aboutContent, setAboutContent] = useState<AboutContent[]>([]);
   const [contentBlocks, setContentBlocks] = useState(defaultBlocks);
-  const [heroText, setHeroText] = useState('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.');
+  const [heroText, setHeroText] = useState('Kabir Hussain MA and Vicky Hussain MA PGCE are both artists with individual art practices.');
 
   useEffect(() => {
     fetchAboutContent();
@@ -171,11 +162,16 @@ export default function About() {
             viewport={{ once: true }}
             className="max-w-4xl text-center"
           >
-            <h2 className="text-6xl font-spectral font-bold mb-8">Lorem Ipsum Dolor Sit</h2>
-            <p className="text-2xl leading-relaxed text-gray-800">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-              Nisi ut aliquip ex ea commodo consequat.
+            <h2 className="text-6xl font-spectral font-bold mb-8">Welcome to Walnut Works</h2>
+            <p className="text-2xl leading-relaxed text-gray-800 mb-8">
+              A traditional block investment foundry in Suffolk, UK.
             </p>
+            <a
+              href="mailto:kabirhussain11@gmail.com"
+              className="inline-block font-serif text-lg text-[#c4342e] border-b border-[#c4342e] pb-1 hover:opacity-60 transition-opacity"
+            >
+              Email Us →
+            </a>
           </motion.div>
         </section>
       </div>

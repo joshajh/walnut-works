@@ -21,14 +21,16 @@ export default function Home() {
                         className="text-xs md:text-base tracking-widest mt-2 text-gray-800 uppercase"
                         style={{ letterSpacing: '0.08em', fontWeight: 500 }}
                     >
-                        Master bronze foundry. Suffolk, UK.
+                        Traditional Block Investment Foundry.
+                        <br />
+                        Suffolk, UK.
                     </p>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 border-b border-gray-900 mx-4 md:mx-6 my-6 md:my-8"></div>
             </section>
 
             {/* Section 2: Introduction */}
-            <section className="min-h-screen snap-start snap-always flex items-center justify-center px-4 md:px-6 overflow-hidden relative pt-[48px] py-12 md:py-0">
+            <section className="min-h-screen snap-start snap-always flex items-center justify-center px-4 md:px-6 md:pl-16 overflow-hidden relative pt-[48px] py-12 md:py-0">
                 {/* Section Title Tab - Vertical on desktop, horizontal on mobile */}
                 <div
                     className="absolute top-[48px] left-0 border-r border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80 hidden md:block"
@@ -42,7 +44,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center w-full">
+                <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                     {/* Left column: Text */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -105,7 +107,7 @@ export default function Home() {
             </section>
 
             {/* Section 3: Explore */}
-            <section className="min-h-screen snap-start snap-always flex items-center justify-center px-4 md:px-6 py-12 md:py-16 relative pt-[48px]">
+            <section className="min-h-screen snap-start snap-always flex items-center justify-center px-4 md:px-6 md:pl-16 py-12 md:py-16 relative pt-[48px]">
                 {/* Section Title Tab - Desktop only */}
                 <div
                     className="absolute top-[48px] left-0 border-r border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80 hidden md:block"
@@ -135,11 +137,9 @@ export default function Home() {
                                         alt="About Walnut Works"
                                         className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
                                     />
-                                    <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
                                 </div>
                                 <div className="md:w-4/5">
-                                    <h3 className="text-xl font-serif font-bold mb-1 group-hover:text-[#c4342e] transition-colors">
+                                    <h3 className="text-xl font-serif font-bold mb-1 group-hover:text-[#c4342e] transition-colors inline-block border-b border-transparent group-hover:border-[#c4342e]">
                                         About
                                     </h3>
                                     <p className="text-gray-700 leading-relaxed text-sm">
@@ -163,15 +163,13 @@ export default function Home() {
                             >
                                 <div className="md:w-1/5 aspect-[4/3] relative mb-4 md:mb-0 flex items-center justify-center">
                                     <img
-                                        src="/foundry.webp"
+                                        src="/bespoke-2.png"
                                         alt="Bespoke Casting"
                                         className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
                                     />
-                                    <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
                                 </div>
                                 <div className="md:w-4/5">
-                                    <h3 className="text-xl font-serif font-bold mb-1 group-hover:text-[#c4342e] transition-colors">
+                                    <h3 className="text-xl font-serif font-bold mb-1 group-hover:text-[#c4342e] transition-colors inline-block border-b border-transparent group-hover:border-[#c4342e]">
                                         Bespoke Casting
                                     </h3>
                                     <p className="text-gray-700 leading-relaxed text-sm">
@@ -199,11 +197,9 @@ export default function Home() {
                                         alt="Workshops"
                                         className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
                                     />
-                                    <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
                                 </div>
                                 <div className="md:w-4/5">
-                                    <h3 className="text-xl font-serif font-bold mb-1 group-hover:text-[#c4342e] transition-colors">
+                                    <h3 className="text-xl font-serif font-bold mb-1 group-hover:text-[#c4342e] transition-colors inline-block border-b border-transparent group-hover:border-[#c4342e]">
                                         Workshops
                                     </h3>
                                     <p className="text-gray-700 leading-relaxed text-sm">
@@ -214,6 +210,86 @@ export default function Home() {
                             </Link>
                         </motion.article>
                     </div>
+                </div>
+            </section>
+
+            {/* Section 4: Visit */}
+            <section className="min-h-screen snap-start snap-always flex items-center justify-center px-4 md:px-6 md:pl-16 py-12 md:py-16 relative pt-[48px]">
+                {/* Section Title Tab - Desktop only */}
+                <div
+                    className="absolute top-[48px] left-0 border-r border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80 hidden md:block"
+                    style={{ writingMode: 'vertical-rl' }}
+                >
+                    <div
+                        className="px-3 py-6 text-[#c4342e] font-serif text-lg"
+                        style={{ letterSpacing: '0.08em', fontWeight: 500 }}
+                    >
+                        Visit
+                    </div>
+                </div>
+
+                <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    {/* Left column: Visit Information */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-2xl md:text-4xl font-serif font-bold mb-6 text-gray-800">
+                            Visit Us
+                        </h2>
+
+                        <div className="space-y-6">
+                            <div>
+                                <h3 className="text-lg font-serif font-bold text-[#c4342e] mb-2">Address</h3>
+                                <p className="text-gray-700 leading-relaxed">
+                                    Walnut Works<br />
+                                    The Old Foundry<br />
+                                    Orford, Suffolk<br />
+                                    IP12 2NR
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-lg font-serif font-bold text-[#c4342e] mb-2">Opening Hours</h3>
+                                <p className="text-gray-700 leading-relaxed">
+                                    By appointment only.<br />
+                                    Please contact us to arrange a visit.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-lg font-serif font-bold text-[#c4342e] mb-2">Contact</h3>
+                                <p className="text-gray-700 leading-relaxed">
+                                    <a href="mailto:info@walnutworks.org" className="hover:text-[#c4342e] transition-colors underline">
+                                        info@walnutworks.org
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Right column: Map placeholder */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="aspect-square md:aspect-[4/3] bg-gray-200 rounded-sm overflow-hidden"
+                    >
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2445.8!2d1.5344!3d52.0956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zT3Jmb3JkLCBTdWZmb2xr!5e0!3m2!1sen!2suk!4v1"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Walnut Works Location"
+                            className="grayscale hover:grayscale-0 transition-all duration-500"
+                        />
+                    </motion.div>
                 </div>
             </section>
 

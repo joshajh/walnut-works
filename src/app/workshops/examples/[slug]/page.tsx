@@ -96,10 +96,8 @@ export default function WorkshopExampleDetailPage({
                 <img
                   src={example.image_url}
                   alt={example.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
-                <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
               </div>
             )}
 
@@ -135,10 +133,8 @@ export default function WorkshopExampleDetailPage({
                     <img
                       src={imageUrl}
                       alt={`${example.title} - Image ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
-                    <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
                   </div>
                 ))}
               </div>

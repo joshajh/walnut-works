@@ -84,7 +84,7 @@ export default function JournalEntryPage({
               <img
                 src={entry.image_url}
                 alt={entry.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
           )}

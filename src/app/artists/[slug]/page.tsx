@@ -100,7 +100,7 @@ export default function ArtistDetailPage({
                   <img
                     src={artist.profile_image_url}
                     alt={artist.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </div>
@@ -180,7 +180,7 @@ export default function ArtistDetailPage({
                       <img
                         src={artwork.image_url}
                         alt={artwork.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                     <div className="p-6">

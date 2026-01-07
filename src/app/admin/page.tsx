@@ -1002,7 +1002,7 @@ function ArtistsManager({ token }: { token: string }) {
             {artworks.map((artwork) => (
               <div key={artwork.id} className="border border-gray-300 p-3 rounded flex items-center gap-4">
                 {artwork.image_url && (
-                  <img src={artwork.image_url} alt={artwork.title} className="w-20 h-20 object-cover rounded" />
+                  <img src={artwork.image_url} alt={artwork.title} className="w-20 h-20 object-contain rounded" />
                 )}
                 <div className="flex-1">
                   <h5 className="font-bold">{artwork.title}</h5>

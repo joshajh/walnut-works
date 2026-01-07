@@ -50,9 +50,13 @@ export default function Programme2025Page() {
     const sections = {
         programme: {
             title: 'The Programme',
-            text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            text: `The guest artist program initially arose when we approached artists with long-standing practices and reflected on how they may benefit from working directly in bronze. We offered this unique opportunity to realise a body of work which due to the technical and financial limitations would ordinarily be difficult for them to achieve. Unlike a formal foundry environment, a Walnut Works residency serves as an extension of studio practice, with guidance allowing them to investigate materials and processes in a hands-on manner.
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.`,
+The artist arrives at the studio with a pre-formulated idea and processes these ideas through an explorative phase of handling the materials to familiarise themselves with the casting procedure; through interaction with grog, luto, and plaster. This technique was practised at the Royal College of Art having been introduced by the Angelone Brothers from Rome.
+
+Cire Perdue extends the artist's vocabulary and establishes a bridge with the Renaissance Masters. After the physically grounding experience of making the investment mould - there is a significant moment of the big reveal - breaking open the cast after the metal has been poured and cooled.
+
+The metalworking stage allows for a greater understanding of surface and form of the piece. Patination completes the cycle giving the artist a bond with their own work and a sense of satisfaction with their own endeavours.`,
             images: Array(16).fill('/foundry.webp'),
         },
         'care-homes': {
@@ -159,7 +163,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                     >
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-20 items-start">
                             {/* Left column: Image Grid */}
-                            <div className="grid grid-cols-3 md:grid-cols-4 gap-1 md:gap-2 max-h-[50vh] md:max-h-[calc(100vh-250px)] overflow-y-auto pr-0 md:pr-4">
+                            <div className="grid grid-cols-3 md:grid-cols-4 gap-1 md:gap-2 max-h-[50vh] md:max-h-[calc(100vh-250px)] overflow-y-auto scrollbar-hide pr-0 md:pr-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                                 {section.images.map((img, index) => (
                                     <div
                                         key={index}
@@ -171,14 +175,12 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                                             alt={`${section.title} ${index + 1}`}
                                             className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
                                         />
-                                        <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40 group-hover:opacity-30 transition-opacity"></div>
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
                                     </div>
                                 ))}
                             </div>
 
                             {/* Right column: Text */}
-                            <div className="max-h-auto md:max-h-[calc(100vh-250px)] overflow-y-auto pr-0 md:pr-4">
+                            <div className="max-h-auto md:max-h-[calc(100vh-250px)] overflow-y-auto scrollbar-hide pr-0 md:pr-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                                 <h2 className="text-2xl md:text-4xl font-serif font-bold mb-4 md:mb-6 text-gray-800">
                                     {section.title}
                                 </h2>
@@ -222,10 +224,8 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                                                 <img
                                                     src={artist.profile_image_url}
                                                     alt={artist.name}
-                                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                                                 />
-                                                <div className="absolute inset-0 bg-[#c4342e] mix-blend-multiply opacity-40"></div>
-                                                <div className="absolute inset-0 bg-gradient-to-br from-[#c4342e]/25 to-[#8b1a14]/25"></div>
                                             </div>
                                         )}
                                         <div className="md:w-3/5">
