@@ -16,7 +16,7 @@ export default function BespokeCastingPage() {
             <Navigation pageTitle="Bespoke Casting" />
 
             {/* Combined Hero + Gallery Section */}
-            <section className="min-h-screen flex flex-col justify-center px-8 pt-24 pb-12">
+            <section className="min-h-screen flex flex-col justify-center px-4 md:px-8 pt-32 md:pt-24 pb-12">
                 <div className="max-w-6xl mx-auto w-full">
                     {/* Header */}
                     <motion.div

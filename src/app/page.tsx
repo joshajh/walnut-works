@@ -11,22 +11,29 @@ export default function Home() {
             <Navigation />
 
             {/* Section 1: Hero */}
-            <section className="h-screen snap-start snap-always flex items-end justify-end px-4 md:px-6 py-12 md:py-16 relative">
-                {/* Text - bottom right */}
-                <div className="text-right">
-                    <h1 className="text-4xl md:text-7xl font-spectral font-normal drop-shadow-md !text-[#c4342e]">
+            <section className="h-screen snap-start snap-always flex items-center justify-center px-4 md:px-6 relative">
+                {/* Text - centred */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-center"
+                >
+                    <h1 className="text-5xl md:text-8xl font-spectral font-normal drop-shadow-md !text-[#c4342e]">
                         Walnut Works
                     </h1>
-                    <p
-                        className="text-xs md:text-base tracking-widest mt-2 text-gray-800 uppercase"
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        className="text-sm md:text-lg tracking-widest mt-4 text-gray-800 uppercase"
                         style={{ letterSpacing: '0.08em', fontWeight: 500 }}
                     >
                         Traditional Block Investment Foundry.
                         <br />
                         Suffolk, UK.
-                    </p>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 border-b border-gray-900 mx-4 md:mx-6 my-6 md:my-8"></div>
+                    </motion.p>
+                </motion.div>
             </section>
 
             {/* Section 2: Introduction */}

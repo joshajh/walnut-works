@@ -73,21 +73,17 @@ export default function WorkshopDetailPage({
         pageTitle="Workshop"
         pageDescription={
           workshop.date && workshop.location
-            ? (
-              <span className="text-[#c4342e] font-medium">
-                {new Date(workshop.date).toLocaleDateString('en-GB', {
-                  weekday: 'long',
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })} • {workshop.location}
-              </span>
-            )
+            ? `${new Date(workshop.date).toLocaleDateString('en-GB', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })} • ${workshop.location}`
             : undefined
         }
       />
 
-      <article className="pt-32 px-16 max-w-7xl mx-auto">
+      <article className="pt-40 md:pt-32 px-4 md:px-16 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -102,7 +98,7 @@ export default function WorkshopDetailPage({
             Back to Workshops
           </Link>
 
-          <div className="grid grid-cols-2 gap-16 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-16">
             {/* Left: Image */}
             {workshop.image_url && (
               <div className="aspect-[4/3] overflow-hidden relative">

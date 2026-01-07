@@ -32,8 +32,8 @@ function ContentBlock({ block, index }: { block: typeof defaultBlocks[0]; index:
   const isEven = index % 2 === 0;
 
   return (
-    <div className="min-h-screen flex items-center py-24 px-16">
-      <div className={`max-w-7xl mx-auto w-full grid grid-cols-2 gap-16 items-center ${isEven ? '' : 'direction-rtl'}`}>
+    <div className="min-h-screen flex items-center py-24 px-4 md:px-16">
+      <div className={`max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center ${isEven ? '' : 'direction-rtl'}`}>
         {isEven ? (
           <>
             <motion.div
@@ -127,7 +127,7 @@ export default function About() {
 
       <div>
         {/* Hero Section */}
-        <section className="h-screen flex flex-col items-center justify-center px-16">
+        <section className="h-screen flex flex-col items-center justify-center px-4 md:px-16 pt-16 md:pt-0">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -154,7 +154,7 @@ export default function About() {
         </div>
 
         {/* Closing Section */}
-        <section className="min-h-screen flex items-center justify-center px-16">
+        <section className="min-h-screen flex items-center justify-center px-4 md:px-16">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

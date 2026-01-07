@@ -139,7 +139,7 @@ export default function PDFFlipBook({ pdfUrl }: PDFFlipBookProps) {
           boxShadow: 'inset 0 0 30px rgba(0,0,0,0.3), 0 10px 40px rgba(0,0,0,0.2)'
         }}
       >
-        {/* @ts-expect-error - react-pageflip types are incomplete */}
+        {/* @ts-ignore - react-pageflip types are incomplete */}
         <HTMLFlipBook
           ref={flipBookRef}
           width={dimensions.width}

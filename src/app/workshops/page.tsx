@@ -13,7 +13,7 @@ export default function WorkshopsPage() {
         pageDescription="Join us for hands-on workshops in traditional bronze casting techniques. Learn from master craftspeople in our Suffolk studio."
       />
 
-      <div className="pt-32 px-8 max-w-7xl mx-auto">
+      <div className="pt-40 md:pt-32 px-4 md:px-8 max-w-7xl mx-auto">
 
         {/* Workshop 1: Wax to Bronze Kits */}
         <motion.section
@@ -72,7 +72,7 @@ export default function WorkshopsPage() {
           <h2 className="text-4xl font-serif font-bold mb-4 text-gray-800">Six Day Workshops</h2>
           <p className="text-xl text-gray-600 mb-8 font-serif">At Walnut Works over three visits with master founder Kabir Hussain</p>
 
-          <div className="p-6 mb-12 border-l-4 border-[#c4342e]">
+          <div className="mb-12">
             <p className="text-gray-700 leading-relaxed text-lg">
               A unique opportunity for artists to cast a small body of work in bronze ready for an exhibition using approximately 20kg of bronze for 10 objects 10cm x 10cm x 10cm.
             </p>
@@ -99,7 +99,7 @@ export default function WorkshopsPage() {
           </div>
 
           {/* Casting Note */}
-          <div className="p-6 mb-16 border-l-4 border-[#c4342e]">
+          <div className="mb-16">
             <p className="text-gray-700 leading-relaxed text-lg italic">
               Walnut Works will undertake the casting and fettling of the bronze in preparation for the finishing by the artist.
             </p>

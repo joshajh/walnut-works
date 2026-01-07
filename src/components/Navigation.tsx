@@ -350,39 +350,39 @@ export default function Navigation({
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <motion.div
-                        initial={{ x: '100%' }}
-                        animate={{ x: 0 }}
-                        exit={{ x: '100%' }}
-                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                        className="fixed top-[48px] right-0 bottom-0 w-full bg-[#F0EEDE] z-40 md:hidden overflow-y-auto"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed inset-0 top-[48px] bg-[#F0EEDE] z-40 md:hidden flex flex-col"
                     >
-                        <nav className="flex flex-col p-6 space-y-2">
+                        <nav className="flex-1 flex flex-col justify-center px-8">
                             <Link
                                 href="/about"
                                 onClick={() => setMobileMenuOpen(false)}
-                                className={`px-4 py-3 text-lg hover:bg-[#c4342e]/10 transition-all duration-300 ${
-                                    isActive('/about') ? 'bg-[#c4342e]/10' : ''
+                                className={`py-3 text-xl text-gray-800 hover:text-[#c4342e] transition-colors ${
+                                    isActive('/about') ? 'text-[#c4342e]' : ''
                                 }`}
                             >
                                 About
                             </Link>
 
                             {/* Learn submenu */}
-                            <div className="border-t border-gray-300 pt-2">
-                                <div className="px-4 py-3 text-lg font-semibold text-gray-600">
+                            <div className="border-t border-gray-300 mt-3 pt-3">
+                                <div className="text-sm uppercase tracking-wider text-gray-500 mb-2">
                                     Learn
                                 </div>
                                 <Link
                                     href="/bronze-sculpture"
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="px-8 py-2 text-base hover:bg-[#c4342e]/10 transition-all duration-300 block"
+                                    className="block py-2 pl-4 text-lg text-gray-800 hover:text-[#c4342e] transition-colors"
                                 >
                                     History
                                 </Link>
                                 <Link
                                     href="/casting-process"
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="px-8 py-2 text-base hover:bg-[#c4342e]/10 transition-all duration-300 block"
+                                    className="block py-2 pl-4 text-lg text-gray-800 hover:text-[#c4342e] transition-colors"
                                 >
                                     Process
                                 </Link>
@@ -391,8 +391,8 @@ export default function Navigation({
                             <Link
                                 href="/bespoke-casting"
                                 onClick={() => setMobileMenuOpen(false)}
-                                className={`px-4 py-3 text-lg hover:bg-[#c4342e]/10 transition-all duration-300 ${
-                                    isActive('/bespoke-casting') ? 'bg-[#c4342e]/10' : ''
+                                className={`py-3 text-xl text-gray-800 hover:text-[#c4342e] transition-colors border-t border-gray-300 mt-3 pt-3 ${
+                                    isActive('/bespoke-casting') ? 'text-[#c4342e]' : ''
                                 }`}
                             >
                                 Bespoke Casting
@@ -401,29 +401,29 @@ export default function Navigation({
                             <Link
                                 href="/workshops"
                                 onClick={() => setMobileMenuOpen(false)}
-                                className={`px-4 py-3 text-lg hover:bg-[#c4342e]/10 transition-all duration-300 ${
-                                    isActive('/workshops') ? 'bg-[#c4342e]/10' : ''
+                                className={`py-3 text-xl text-gray-800 hover:text-[#c4342e] transition-colors ${
+                                    isActive('/workshops') ? 'text-[#c4342e]' : ''
                                 }`}
                             >
                                 Workshops
                             </Link>
 
                             {/* Guest Artists submenu */}
-                            <div className="border-t border-gray-300 pt-2">
-                                <div className="px-4 py-3 text-lg font-semibold text-gray-600">
-                                    Guest Artists
+                            <div className="border-t border-gray-300 mt-3 pt-3">
+                                <div className="text-sm uppercase tracking-wider text-gray-500 mb-2">
+                                    Artists in Residence
                                 </div>
                                 <Link
                                     href="/2024-programme"
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="px-8 py-2 text-base hover:bg-[#c4342e]/10 transition-all duration-300 block"
+                                    className="block py-2 pl-4 text-lg text-gray-800 hover:text-[#c4342e] transition-colors"
                                 >
                                     2024 Programme
                                 </Link>
                                 <Link
                                     href="/2025-programme"
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="px-8 py-2 text-base hover:bg-[#c4342e]/10 transition-all duration-300 block"
+                                    className="block py-2 pl-4 text-lg text-gray-800 hover:text-[#c4342e] transition-colors"
                                 >
                                     2025 Programme
                                 </Link>

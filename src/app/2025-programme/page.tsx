@@ -148,7 +148,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
                 }
             />
 
-            <div className="pt-32 md:pt-48 px-4 md:px-8 max-w-7xl mx-auto">
+            <div className="pt-48 md:pt-48 px-4 md:px-8 max-w-7xl mx-auto">
                 {/* Content */}
                 {Object.entries(sections).map(([key, section]) => (
                     <motion.div

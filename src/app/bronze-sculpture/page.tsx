@@ -10,7 +10,7 @@ export default function BronzeSculpture() {
       <Navigation pageTitle="Bronze Sculpture" />
 
       {/* Opening Statement */}
-      <section className="min-h-screen flex items-center justify-center px-8 pt-24">
+      <section className="min-h-screen flex items-center justify-center px-4 md:px-8 pt-32 md:pt-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ export default function BronzeSculpture() {
       </section>
 
       {/* Discovery of Bronze */}
-      <section className="py-20 px-8">
+      <section className="py-20 px-4 md:px-4 md:px-8">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -52,7 +52,7 @@ export default function BronzeSculpture() {
       </section>
 
       {/* Image Placeholders: Fire and Copper + Tin = Bronze */}
-      <section className="py-12 px-8 bg-stone-100">
+      <section className="py-12 px-4 md:px-8 bg-stone-100">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <motion.div
@@ -78,7 +78,7 @@ export default function BronzeSculpture() {
       </section>
 
       {/* The Smith's Power */}
-      <section className="py-20 px-8">
+      <section className="py-20 px-4 md:px-8">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -125,7 +125,7 @@ export default function BronzeSculpture() {
       </section>
 
       {/* Image Placeholders: Ancient Sculptures */}
-      <section className="py-12 px-8">
+      <section className="py-12 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <motion.div
@@ -151,7 +151,7 @@ export default function BronzeSculpture() {
       </section>
 
       {/* Medieval to Renaissance */}
-      <section className="py-20 px-8">
+      <section className="py-20 px-4 md:px-8">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -202,7 +202,7 @@ export default function BronzeSculpture() {
       </section>
 
       {/* The British Empire */}
-      <section className="py-20 px-8">
+      <section className="py-20 px-4 md:px-8">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -284,7 +284,7 @@ export default function BronzeSculpture() {
       </section>
 
       {/* Contemporary Practice */}
-      <section className="py-20 px-8">
+      <section className="py-20 px-4 md:px-8">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -309,7 +309,7 @@ export default function BronzeSculpture() {
       </section>
 
       {/* Closing Image */}
-      <section className="py-12 px-8">
+      <section className="py-12 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

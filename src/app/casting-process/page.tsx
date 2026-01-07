@@ -10,49 +10,24 @@ export default function CastingProcess() {
             <Navigation pageTitle="The Process" />
 
             {/* Opening Statement */}
-            <section className="min-h-screen flex items-end justify-center px-8 pt-24 pb-16 relative overflow-hidden">
-                {/* Background Image */}
-                <div
-                    className="absolute inset-0 bg-cover bg-center opacity-20"
-                    style={{ backgroundImage: 'url(/foundry.webp)' }}
-                />
-                {/* Dithering Texture */}
-                <div
-                    className="absolute inset-0 opacity-40 mix-blend-overlay"
-                    style={{
-                        backgroundImage: 'url(/dotnoise-light-grey.png)',
-                        backgroundRepeat: 'repeat',
-                    }}
-                />
-
+            <section className="min-h-screen flex items-center justify-center px-4 md:px-8 pt-32 md:pt-24 pb-16">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="max-w-4xl text-center relative z-10"
+                    className="max-w-4xl text-center"
                 >
-                    <h1 className="text-5xl md:text-6xl font-serif font-normal leading-tight mb-2 text-white drop-shadow-lg">
-                        <span className="bg-[#F0EEDE]/80 text-gray-800 px-6 py-2 inline-block">
-                            The Bronze Casting Process
-                        </span>
+                    <h1 className="text-4xl md:text-6xl font-serif font-normal leading-tight mb-6">
+                        The Bronze Casting Process
                     </h1>
-                    <p className="text-xl md:text-2xl leading-relaxed mb-8">
-                        <span className="bg-[#F0EEDE]/80 text-gray-800 px-4 py-1 inline-block">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                        </span>
+                    <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                        A step-by-step journey through the traditional lost-wax casting method
                     </p>
-                    <motion.div
-                        animate={{ y: [0, 10, 0] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                        className="text-white text-4xl"
-                    >
-                        ↓
-                    </motion.div>
                 </motion.div>
             </section>
 
             {/* Step 1: Arrival */}
-            <section className="py-20 px-8">
+            <section className="py-20 px-4 md:px-8">
                 <div className="max-w-3xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -91,7 +66,7 @@ export default function CastingProcess() {
             </section>
 
             {/* Step 2: Sprue System */}
-            <section className="py-20 px-8">
+            <section className="py-20 px-4 md:px-8">
                 <div className="max-w-3xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -117,7 +92,7 @@ export default function CastingProcess() {
             </section>
 
             {/* Image: Runners and Risers */}
-            <section className="py-12 px-8">
+            <section className="py-12 px-4 md:px-8">
                 <div className="max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -161,7 +136,7 @@ export default function CastingProcess() {
             </section>
 
             {/* Images: First Coat and Plaster Mix */}
-            <section className="py-12 px-8">
+            <section className="py-12 px-4 md:px-8">
                 <div className="max-w-6xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <motion.div
@@ -191,7 +166,7 @@ export default function CastingProcess() {
             </section>
 
             {/* Step 4: Second Coat */}
-            <section className="py-20 px-8">
+            <section className="py-20 px-4 md:px-8">
                 <div className="max-w-3xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -252,7 +227,7 @@ export default function CastingProcess() {
             </section>
 
             {/* Step 5: To the Kiln */}
-            <section className="py-20 px-8">
+            <section className="py-20 px-4 md:px-8">
                 <div className="max-w-3xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -279,7 +254,7 @@ export default function CastingProcess() {
             </section>
 
             {/* Images: Kiln Process */}
-            <section className="py-12 px-8">
+            <section className="py-12 px-4 md:px-8">
                 <div className="max-w-6xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <motion.div
@@ -335,7 +310,7 @@ export default function CastingProcess() {
             </section>
 
             {/* Image: Wrapping Moulds */}
-            <section className="py-12 px-8">
+            <section className="py-12 px-4 md:px-8">
                 <div className="max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -352,7 +327,7 @@ export default function CastingProcess() {
             </section>
 
             {/* Step 7: Melting the Bronze */}
-            <section className="py-20 px-8">
+            <section className="py-20 px-4 md:px-8">
                 <div className="max-w-3xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -408,7 +383,7 @@ export default function CastingProcess() {
             </section>
 
             {/* Step 8: The Pour */}
-            <section className="py-20 px-8">
+            <section className="py-20 px-4 md:px-8">
                 <div className="max-w-3xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -452,7 +427,7 @@ export default function CastingProcess() {
             </section>
 
             {/* Step 9: Breaking Open */}
-            <section className="py-20 px-8">
+            <section className="py-20 px-4 md:px-8">
                 <div className="max-w-3xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -512,7 +487,7 @@ export default function CastingProcess() {
             </section>
 
             {/* Step 10: Fettling */}
-            <section className="py-20 px-8">
+            <section className="py-20 px-4 md:px-8">
                 <div className="max-w-3xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -539,7 +514,7 @@ export default function CastingProcess() {
             </section>
 
             {/* Images: Fettling */}
-            <section className="py-12 px-8">
+            <section className="py-12 px-4 md:px-8">
                 <div className="max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -587,7 +562,7 @@ export default function CastingProcess() {
             </section>
 
             {/* Images: Patination and Finished Works */}
-            <section className="py-12 px-8">
+            <section className="py-12 px-4 md:px-8">
                 <div className="max-w-6xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <motion.div
@@ -617,7 +592,7 @@ export default function CastingProcess() {
             </section>
 
             {/* Closing Statement */}
-            <section className="py-20 px-8">
+            <section className="py-20 px-4 md:px-8">
                 <div className="max-w-3xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0 }}

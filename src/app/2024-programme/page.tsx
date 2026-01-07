@@ -22,7 +22,7 @@ export default function Programme2024Page() {
         pageDescription="Explore our 2024 programme showcasing the creative work and community engagement from the past year."
       />
 
-      <div className="pt-32 md:pt-48 px-4 md:px-8 max-w-5xl mx-auto">
+      <div className="pt-48 md:pt-48 px-4 md:px-8 max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
