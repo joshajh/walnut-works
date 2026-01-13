@@ -10,7 +10,7 @@ export default function BronzeSculpture() {
       <Navigation pageTitle="Bronze Sculpture" />
 
       {/* Opening Statement */}
-      <section className="min-h-screen flex items-center justify-center px-4 md:px-8 pt-32 md:pt-24">
+      <section className="min-h-screen flex items-center justify-center px-4 md:px-8 pt-32 md:pt-24 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -23,6 +23,31 @@ export default function BronzeSculpture() {
           <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
             Modern historians believe that setting up stones around a fire enabled early people to extract metals from rocks.
           </p>
+        </motion.div>
+
+        {/* Animated down arrow */}
+        <motion.div
+          className="absolute bottom-20 left-1/2 -translate-x-1/2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, y: [0, 10, 0] }}
+          transition={{
+            opacity: { delay: 1, duration: 0.5 },
+            y: { delay: 1, duration: 1.5, repeat: Infinity, ease: "easeInOut" }
+          }}
+        >
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="text-gray-500"
+          >
+            <path d="M12 5v14M19 12l-7 7-7-7" />
+          </svg>
         </motion.div>
       </section>
 

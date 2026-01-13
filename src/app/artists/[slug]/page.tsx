@@ -79,7 +79,7 @@ export default function ArtistDetailPage({
   }
 
   return (
-    <div className="min-h-screen bg-[#F0EEDE] noise-bg">
+    <div className="min-h-screen bg-[#F0EEDE] noise-bg pb-24">
       <Navigation />
 
       <article className="pt-32 px-12 max-w-7xl mx-auto">
@@ -96,11 +96,11 @@ export default function ArtistDetailPage({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
             {artist.profile_image_url && (
               <div className="md:col-span-1">
-                <div className="aspect-[3/4] bg-gray-200 rounded-lg overflow-hidden sticky top-32">
+                <div className="aspect-[3/4] rounded-lg overflow-hidden sticky top-32 flex items-center justify-center">
                   <img
                     src={artist.profile_image_url}
                     alt={artist.name}
-                    className="w-full h-full object-contain"
+                    className="max-w-full max-h-full object-contain"
                   />
                 </div>
               </div>
@@ -119,13 +119,13 @@ export default function ArtistDetailPage({
 
               {/* Social Links */}
               {(artist.website || artist.instagram || artist.twitter || artist.email) && (
-                <div className="flex flex-wrap gap-4 pt-6 border-t border-gray-300">
+                <div className="flex flex-wrap gap-6 pt-6 border-t border-gray-300">
                   {artist.website && (
                     <a
                       href={artist.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 border border-gray-900 hover:bg-gray-900 hover:text-white transition-colors text-sm"
+                      className="inline-block font-serif text-[#c4342e] border-b border-[#c4342e] pb-1 hover:opacity-60 transition-opacity"
                     >
                       Website
                     </a>
@@ -135,7 +135,7 @@ export default function ArtistDetailPage({
                       href={artist.instagram.startsWith('http') ? artist.instagram : `https://instagram.com/${artist.instagram}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 border border-gray-900 hover:bg-gray-900 hover:text-white transition-colors text-sm"
+                      className="inline-block font-serif text-[#c4342e] border-b border-[#c4342e] pb-1 hover:opacity-60 transition-opacity"
                     >
                       Instagram
                     </a>
@@ -145,7 +145,7 @@ export default function ArtistDetailPage({
                       href={artist.twitter.startsWith('http') ? artist.twitter : `https://twitter.com/${artist.twitter}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 border border-gray-900 hover:bg-gray-900 hover:text-white transition-colors text-sm"
+                      className="inline-block font-serif text-[#c4342e] border-b border-[#c4342e] pb-1 hover:opacity-60 transition-opacity"
                     >
                       Twitter
                     </a>
@@ -153,7 +153,7 @@ export default function ArtistDetailPage({
                   {artist.email && (
                     <a
                       href={`mailto:${artist.email}`}
-                      className="px-4 py-2 border border-gray-900 hover:bg-gray-900 hover:text-white transition-colors text-sm"
+                      className="inline-block font-serif text-[#c4342e] border-b border-[#c4342e] pb-1 hover:opacity-60 transition-opacity"
                     >
                       Email
                     </a>
@@ -167,38 +167,21 @@ export default function ArtistDetailPage({
           {artist.artworks && artist.artworks.length > 0 && (
             <div className="mt-16">
               <h2 className="text-3xl font-serif font-bold mb-8">Selected Works</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {artist.artworks.map((artwork, index) => (
                   <motion.div
                     key={artwork.id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white rounded-lg shadow-lg overflow-hidden"
+                    className="overflow-hidden"
                   >
-                    <div className="aspect-square bg-gray-200 overflow-hidden">
+                    <div className="aspect-square overflow-hidden flex items-center justify-center">
                       <img
                         src={artwork.image_url}
                         alt={artwork.title}
-                        className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                        className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-500"
                       />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-serif font-bold mb-2">{artwork.title}</h3>
-                      {artwork.year && (
-                        <p className="text-sm text-gray-600 mb-2">{artwork.year}</p>
-                      )}
-                      {artwork.medium && (
-                        <p className="text-sm text-gray-700 mb-2">{artwork.medium}</p>
-                      )}
-                      {artwork.dimensions && (
-                        <p className="text-xs text-gray-600 mb-3">{artwork.dimensions}</p>
-                      )}
-                      {artwork.description && (
-                        <p className="text-sm text-gray-700 leading-relaxed">
-                          {artwork.description}
-                        </p>
-                      )}
                     </div>
                   </motion.div>
                 ))}

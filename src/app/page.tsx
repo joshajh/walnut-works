@@ -61,15 +61,10 @@ export default function Home() {
                         className="flex flex-col justify-center"
                     >
                         <h2 className="text-2xl md:text-4xl font-serif font-bold mb-4 md:mb-8 text-gray-800">
-                            Lorem Ipsum Dolor Sit
+                            Ancient Meets Modern
                         </h2>
-                        <p className="text-base md:text-xl leading-relaxed mb-4 md:mb-8 text-gray-800">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
                         <p className="text-base md:text-xl leading-relaxed text-gray-800">
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                            ut aliquip ex ea commodo consequat.
+                            Walnut Works was established in 2019. The idea had been formulated many years earlier to utilise master founder Kabir Hussain's 30 years of experience working in commercial fine art foundries with prominent 20th and 21st century artists and Vicky Hussain's experience in schools and as a founder member, gallery organiser, and curator of five bronze shows at Greyfriars Art Space in King's Lynn.
                         </p>
                     </motion.div>
 
@@ -150,8 +145,7 @@ export default function Home() {
                                         About
                                     </h3>
                                     <p className="text-gray-700 leading-relaxed text-sm">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                        do eiusmod tempor incididunt.
+                                        Walnut Works was established in 2019. The idea had been formulated many years earlier to utilise Kabir's 30 years of experience working in commercial fine art foundries with prominent 20th and 21st century artists and Vicky's experience in schools and as a founder member, gallery organiser, and curator of five bronze shows at Greyfriars Art Space in King's Lynn.
                                     </p>
                                 </div>
                             </Link>
@@ -180,8 +174,7 @@ export default function Home() {
                                         Bespoke Casting
                                     </h3>
                                     <p className="text-gray-700 leading-relaxed text-sm">
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                        laboris nisi ut aliquip.
+                                        Master bronze caster Kabir Hussain welcomes commissions and enquiries from artists interested in casting their work in bronze. Walnut Works is one of very few remaining investment foundries in the UK, continuing to use the ancient methods.
                                     </p>
                                 </div>
                             </Link>
@@ -210,8 +203,7 @@ export default function Home() {
                                         Workshops
                                     </h3>
                                     <p className="text-gray-700 leading-relaxed text-sm">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit
-                                        esse cillum dolore eu fugiat.
+                                        Visit the foundry at Walnut Works, nestled in the Suffolk countryside, and join us for a hands-on experience of bronze casting led by master founder Kabir Hussain and curator-educator Vicky Hussain. Arrive with an idea, leave with a sculpture.
                                     </p>
                                 </div>
                             </Link>
@@ -301,9 +293,7 @@ export default function Home() {
             </section>
 
             {/* Footer */}
-            <section className="min-h-screen snap-start snap-always flex items-end">
-                <Footer />
-            </section>
+            <Footer />
         </div>
     )
 }
