@@ -43,8 +43,8 @@ function ContentBlock({ block, index }: { block: typeof defaultBlocks[0]; index:
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h2 className="text-5xl font-spectral font-bold">{block.title}</h2>
-              <p className="text-xl leading-relaxed text-gray-800">{block.text}</p>
+              <h2 className="text-3xl md:text-5xl font-spectral font-bold">{block.title}</h2>
+              <p className="text-base md:text-xl leading-relaxed text-gray-800">{block.text}</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -74,8 +74,8 @@ function ContentBlock({ block, index }: { block: typeof defaultBlocks[0]; index:
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h2 className="text-5xl font-spectral font-bold">{block.title}</h2>
-              <p className="text-xl leading-relaxed text-gray-800">{block.text}</p>
+              <h2 className="text-3xl md:text-5xl font-spectral font-bold">{block.title}</h2>
+              <p className="text-base md:text-xl leading-relaxed text-gray-800">{block.text}</p>
             </motion.div>
           </>
         )}
@@ -132,7 +132,7 @@ export default function About() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-8xl font-spectral font-bold mb-6"
+            className="text-4xl md:text-8xl font-spectral font-bold mb-6"
           >
             About Us
           </motion.h1>
@@ -140,7 +140,7 @@ export default function About() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-xl text-gray-800 max-w-2xl text-center"
+            className="text-base md:text-xl text-gray-800 max-w-2xl text-center"
           >
             {heroText}
           </motion.p>
@@ -162,8 +162,8 @@ export default function About() {
             viewport={{ once: true }}
             className="max-w-4xl text-center"
           >
-            <h2 className="text-6xl font-spectral font-bold mb-8">Welcome to Walnut Works</h2>
-            <p className="text-2xl leading-relaxed text-gray-800 mb-8">
+            <h2 className="text-3xl md:text-6xl font-spectral font-bold mb-8">Welcome to Walnut Works</h2>
+            <p className="text-lg md:text-2xl leading-relaxed text-gray-800 mb-8">
               A traditional block investment foundry in Suffolk, UK.
             </p>
             <a
