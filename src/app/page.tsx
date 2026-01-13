@@ -7,11 +7,11 @@ import Link from 'next/link'
 
 export default function Home() {
     return (
-        <div className="h-screen overflow-y-auto snap-y snap-mandatory bg-[#F0EEDE] noise-bg">
+        <div className="min-h-screen bg-[#F0EEDE] noise-bg">
             <Navigation />
 
             {/* Section 1: Hero */}
-            <section className="h-screen snap-start snap-always flex items-center justify-center px-4 md:px-6 relative">
+            <section className="min-h-screen flex items-center justify-center px-4 md:px-6 relative">
                 {/* Text - centred */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export default function Home() {
             </section>
 
             {/* Section 2: Introduction */}
-            <section className="min-h-screen snap-start snap-always flex items-center justify-center px-4 md:px-6 md:pl-16 overflow-hidden relative pt-[48px] py-12 md:py-0">
+            <section className="py-16 md:py-24 flex items-center justify-center px-4 md:px-6 md:pl-16 overflow-hidden relative">
                 {/* Section Title Tab - Vertical on desktop, horizontal on mobile */}
                 <div
                     className="absolute top-[48px] left-0 border-r border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80 hidden md:block"
@@ -109,7 +109,7 @@ export default function Home() {
             </section>
 
             {/* Section 3: Explore */}
-            <section className="min-h-screen snap-start snap-always flex items-center justify-center px-4 md:px-6 md:pl-16 py-12 md:py-16 relative pt-[48px]">
+            <section className="py-16 md:py-24 flex items-center justify-center px-4 md:px-6 md:pl-16 relative">
                 {/* Section Title Tab - Desktop only */}
                 <div
                     className="absolute top-[48px] left-0 border-r border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80 hidden md:block"
@@ -133,7 +133,7 @@ export default function Home() {
                             viewport={{ once: true }}
                         >
                             <Link href="/about" className="block group md:flex gap-4 items-start">
-                                <div className="md:w-1/5 aspect-[4/3] relative mb-4 md:mb-0 flex items-center justify-center">
+                                <div className="w-1/3 md:w-1/5 aspect-[4/3] relative mb-4 md:mb-0 flex items-center justify-center flex-shrink-0">
                                     <img
                                         src="/clare-jarrett-1.webp"
                                         alt="About Walnut Works"
@@ -162,7 +162,7 @@ export default function Home() {
                                 href="/bespoke-casting"
                                 className="block group md:flex gap-4 items-start"
                             >
-                                <div className="md:w-1/5 aspect-[4/3] relative mb-4 md:mb-0 flex items-center justify-center">
+                                <div className="w-1/3 md:w-1/5 aspect-[4/3] relative mb-4 md:mb-0 flex items-center justify-center flex-shrink-0">
                                     <img
                                         src="/bespoke-2.png"
                                         alt="Bespoke Casting"
@@ -191,7 +191,7 @@ export default function Home() {
                                 href="/workshops"
                                 className="block group md:flex gap-4 items-start"
                             >
-                                <div className="md:w-1/5 aspect-[4/3] relative mb-4 md:mb-0 flex items-center justify-center">
+                                <div className="w-1/3 md:w-1/5 aspect-[4/3] relative mb-4 md:mb-0 flex items-center justify-center flex-shrink-0">
                                     <img
                                         src="/julie-lockhart-2.webp"
                                         alt="Workshops"
@@ -213,7 +213,7 @@ export default function Home() {
             </section>
 
             {/* Section 4: Visit */}
-            <section className="min-h-screen snap-start snap-always flex items-center justify-center px-4 md:px-6 md:pl-16 py-12 md:py-16 relative pt-[48px]">
+            <section className="py-16 md:py-24 flex items-center justify-center px-4 md:px-6 md:pl-16 relative">
                 {/* Section Title Tab - Desktop only */}
                 <div
                     className="absolute top-[48px] left-0 border-r border-b border-gray-300 backdrop-blur-md bg-[#F0EEDE]/80 hidden md:block"

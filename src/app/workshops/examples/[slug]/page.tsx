@@ -55,7 +55,7 @@ export default function WorkshopExampleDetailPage({
     return (
       <div className="min-h-screen bg-[#F0EEDE] noise-bg">
         <Navigation />
-        <div className="pt-32 px-12 max-w-4xl mx-auto text-center">
+        <div className="pt-32 px-4 md:px-12 max-w-4xl mx-auto text-center">
           <h1 className="text-4xl font-serif font-bold mb-6">Example Not Found</h1>
           <Link href="/workshops" className="text-[#c4342e] hover:underline">
             ← Back to Workshops
@@ -74,13 +74,13 @@ export default function WorkshopExampleDetailPage({
         pageDescription="Explore examples of our past workshop sessions and creative outcomes."
       />
 
-      <article className="pt-32 px-16 max-w-7xl mx-auto">
+      <article className="pt-32 px-4 md:px-16 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-6xl font-serif font-bold mb-4">{example.title}</h1>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">{example.title}</h1>
 
           <Link href="/workshops" className="text-gray-600 hover:text-[#c4342e] transition-colors flex items-center gap-2 text-sm mb-12 inline-flex">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-current">

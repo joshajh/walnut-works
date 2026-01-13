@@ -79,7 +79,7 @@ export default function WorkDetail({
     <div className="min-h-screen pb-24 bg-[#F0EEDE] noise-bg">
       <Navigation />
 
-      <div className="pt-32 px-16 max-w-7xl mx-auto">
+      <div className="pt-32 px-4 md:px-16 max-w-7xl mx-auto">
         {/* Back Link */}
         <Link
           href="/work"

@@ -68,8 +68,8 @@ export default function ArtistDetailPage({
     return (
       <div className="min-h-screen bg-[#F0EEDE] noise-bg">
         <Navigation />
-        <div className="pt-32 px-12 max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl font-serif font-bold mb-6">Artist Not Found</h1>
+        <div className="pt-32 px-4 md:px-12 max-w-4xl mx-auto text-center">
+          <h1 className="text-3xl md:text-4xl font-serif font-bold mb-6">Artist Not Found</h1>
           <Link href="/artists" className="text-[#c4342e] hover:underline">
             ← Back to Artists
           </Link>
@@ -82,7 +82,7 @@ export default function ArtistDetailPage({
     <div className="min-h-screen bg-[#F0EEDE] noise-bg pb-24">
       <Navigation />
 
-      <article className="pt-32 px-12 max-w-7xl mx-auto">
+      <article className="pt-32 px-4 md:px-12 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -107,7 +107,7 @@ export default function ArtistDetailPage({
             )}
 
             <div className="md:col-span-2">
-              <h1 className="text-5xl font-serif font-bold mb-6">{artist.name}</h1>
+              <h1 className="text-3xl md:text-5xl font-serif font-bold mb-6">{artist.name}</h1>
 
               <div className="prose prose-lg max-w-none mb-8">
                 {artist.bio.split('\n\n').map((paragraph, index) => (

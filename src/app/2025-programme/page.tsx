@@ -238,7 +238,7 @@ We felt that it was important to introduce bronze workshops to young people and 
                     >
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-20 items-start">
                             {/* Left column: Image Grid */}
-                            <div className="grid grid-cols-3 md:grid-cols-4 gap-1 md:gap-2 max-h-[50vh] md:max-h-[calc(100vh-250px)] overflow-y-auto scrollbar-hide pr-0 md:pr-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-2 md:max-h-[calc(100vh-250px)] overflow-y-auto scrollbar-hide pr-0 md:pr-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                                 {section.images.map((img, index) => (
                                     <div
                                         key={index}

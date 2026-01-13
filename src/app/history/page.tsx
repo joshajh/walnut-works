@@ -10,7 +10,7 @@ export default function History() {
       <Navigation pageTitle="History" />
 
       {/* Opening Statement */}
-      <section className="min-h-screen flex items-center justify-center px-8 pt-24">
+      <section className="min-h-screen flex items-center justify-center px-4 md:px-8 pt-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ export default function History() {
       </section>
 
       {/* Origins */}
-      <section className="py-20 px-8">
+      <section className="py-20 px-4 md:px-8">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -74,7 +74,7 @@ export default function History() {
       </section>
 
       {/* Chinese Bronze Age */}
-      <section className="py-20 px-8 bg-[#E8E6D6]">
+      <section className="py-20 px-4 md:px-8 bg-[#E8E6D6]">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -108,7 +108,7 @@ export default function History() {
       </section>
 
       {/* Greek and Roman Innovation */}
-      <section className="py-20 px-8">
+      <section className="py-20 px-4 md:px-8">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -143,7 +143,7 @@ export default function History() {
       </section>
 
       {/* Side by Side */}
-      <section className="py-20 px-8 bg-stone-100">
+      <section className="py-20 px-4 md:px-8 bg-stone-100">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -174,7 +174,7 @@ export default function History() {
       </section>
 
       {/* Renaissance Revival */}
-      <section className="py-20 px-8">
+      <section className="py-20 px-4 md:px-8">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -206,7 +206,7 @@ export default function History() {
       </section>
 
       {/* Modern Practice */}
-      <section className="py-20 px-8 bg-[#c4342e]/5">
+      <section className="py-20 px-4 md:px-8 bg-[#c4342e]/5">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}

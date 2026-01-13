@@ -48,7 +48,7 @@ export default function Work() {
     <div className="min-h-screen pb-24 bg-[#F0EEDE] noise-bg">
       <Navigation />
 
-      <div className="pt-32 px-16 space-y-24">
+      <div className="pt-32 px-4 md:px-16 space-y-24">
         {projects.map((project) => (
           <Link
             key={project.id}

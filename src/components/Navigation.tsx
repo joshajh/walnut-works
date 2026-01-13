@@ -354,9 +354,9 @@ export default function Navigation({
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed inset-0 top-[48px] bg-[#F0EEDE] z-40 md:hidden flex flex-col"
+                        className="fixed inset-0 top-[48px] bg-[#F0EEDE] z-40 md:hidden overflow-y-auto"
                     >
-                        <nav className="flex-1 flex flex-col justify-center px-8">
+                        <nav className="flex flex-col px-6 py-6">
                             <Link
                                 href="/about"
                                 onClick={() => setMobileMenuOpen(false)}
@@ -428,6 +428,17 @@ export default function Navigation({
                                     2025 Programme
                                 </Link>
                             </div>
+
+                            {/* Artists direct link */}
+                            <Link
+                                href="/artists"
+                                onClick={() => setMobileMenuOpen(false)}
+                                className={`py-3 text-xl text-gray-800 hover:text-[#c4342e] transition-colors border-t border-gray-300 mt-3 pt-3 ${
+                                    pathname === '/artists' ? 'text-[#c4342e]' : ''
+                                }`}
+                            >
+                                All Artists
+                            </Link>
                         </nav>
                     </motion.div>
                 )}
