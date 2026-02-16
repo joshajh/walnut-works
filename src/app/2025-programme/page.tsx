@@ -162,7 +162,6 @@ Foteini Araka - Creative Mojo`,
             isQuote: false,
             images: [
                 '/work/care-homes/edits/care-1-draft.png',
-                '/work/care-homes/edits/care-2-draft.png',
                 '/work/care-homes/edits/care-3-draft.png',
                 '/work/care-homes/edits/care-4-draft.png',
             ],
@@ -198,7 +197,13 @@ Isla, Class 3`,
         'partners': {
             title: 'Partners & Funders',
             text: 'We are grateful to our partners and funders who have supported the 2025 Programme.',
-            images: [],
+            images: [
+                '/logos/ace-trans.png',
+                '/logos/arts-soc-woodbridge-trans.png',
+                '/logos/essex-cdp-trans.png',
+                '/logos/maass-trans.png',
+                '/logos/suffolk-trans.png',
+            ],
         },
     }
 
@@ -298,52 +303,95 @@ Isla, Class 3`,
                         transition={{ duration: 0.6 }}
                         className={activeTab === key ? 'block' : 'hidden'}
                     >
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-20 items-start">
-                            {/* Left column: Image Grid */}
-                            <div className={`grid gap-2 md:gap-2 md:max-h-[calc(100vh-250px)] overflow-y-auto scrollbar-hide pr-0 md:pr-4 ${section.images.length <= 4 ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-4'}`} style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                                {section.images.map((img, index) => (
-                                    <div
-                                        key={index}
-                                        className="aspect-square relative flex items-center justify-center cursor-pointer group"
-                                        onClick={() => setSelectedImage(img)}
-                                    >
+                        {key === 'partners' ? (
+                            /* Partners Section - Centered layout */
+                            <div className="max-w-4xl mx-auto">
+                                {/* Text first */}
+                                <div className="mb-8 md:mb-12 text-center">
+                                    <h2 className="text-2xl md:text-4xl font-serif font-bold mb-4 md:mb-6 text-gray-800">
+                                        {section.title}
+                                    </h2>
+                                    <div className="text-base md:text-lg leading-relaxed text-gray-700">
+                                        {renderBioWithParagraphs(section.text)}
+                                    </div>
+                                </div>
+                                {/* Logos below */}
+                                <div className="space-y-4">
+                                    {/* First row: ACE logo full width */}
+                                    <div className="w-full aspect-[3/1] flex items-center justify-center cursor-pointer group" onClick={() => setSelectedImage(section.images[0])}>
                                         <img
-                                            src={img}
-                                            alt={`${section.title} ${index + 1}`}
-                                            className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                                            src={section.images[0]}
+                                            alt="Arts Council England"
+                                            className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 group-hover:scale-105 transition-all duration-300"
                                         />
                                     </div>
-                                ))}
-                            </div>
-
-                            {/* Right column: Text */}
-                            <div className="max-h-auto md:max-h-[calc(100vh-250px)] overflow-y-auto scrollbar-hide pr-0 md:pr-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                                <h2 className="text-2xl md:text-4xl font-serif font-bold mb-4 md:mb-6 text-gray-800">
-                                    {section.title}
-                                </h2>
-                                {(() => {
-                                    const isSectionExpanded = expandedSections.has(key)
-                                    const { text: truncatedText, isTruncated } = truncateBio(section.text, 600)
-                                    const displayText = isSectionExpanded ? section.text : truncatedText
-                                    const isQuote = 'isQuote' in section && section.isQuote
-                                    return (
-                                        <>
-                                            <div className={`text-base md:text-lg leading-relaxed text-gray-700 ${isQuote ? 'italic' : ''}`}>
-                                                {renderBioWithParagraphs(displayText)}
+                                    {/* Second row: Other four logos */}
+                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+                                        {section.images.slice(1).map((img, index) => (
+                                            <div
+                                                key={index + 1}
+                                                className="aspect-square relative flex items-center justify-center cursor-pointer group"
+                                                onClick={() => setSelectedImage(img)}
+                                            >
+                                                <img
+                                                    src={img}
+                                                    alt={`Partner ${index + 2}`}
+                                                    className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 group-hover:scale-105 transition-all duration-300"
+                                                />
                                             </div>
-                                            {isTruncated && (
-                                                <button
-                                                    onClick={() => toggleSectionExpanded(key)}
-                                                    className="inline-block mt-4 text-[#c4342e] font-medium hover:underline"
-                                                >
-                                                    {isSectionExpanded ? 'Show less' : 'Read more...'}
-                                                </button>
-                                            )}
-                                        </>
-                                    )
-                                })()}
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        ) : (
+                            /* Other sections - 2-column layout */
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-20 items-start">
+                                {/* Left column: Image Grid */}
+                                <div className={`grid gap-2 md:gap-2 md:max-h-[calc(100vh-250px)] overflow-y-auto scrollbar-hide pr-0 md:pr-4 ${section.images.length <= 4 ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-4'}`} style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                                    {section.images.map((img, index) => (
+                                        <div
+                                            key={index}
+                                            className="aspect-square relative flex items-center justify-center cursor-pointer group"
+                                            onClick={() => setSelectedImage(img)}
+                                        >
+                                            <img
+                                                src={img}
+                                                alt={`${section.title} ${index + 1}`}
+                                                className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Right column: Text */}
+                                <div className="max-h-auto md:max-h-[calc(100vh-250px)] overflow-y-auto scrollbar-hide pr-0 md:pr-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                                    <h2 className="text-2xl md:text-4xl font-serif font-bold mb-4 md:mb-6 text-gray-800">
+                                        {section.title}
+                                    </h2>
+                                    {(() => {
+                                        const isSectionExpanded = expandedSections.has(key)
+                                        const { text: truncatedText, isTruncated } = truncateBio(section.text, 600)
+                                        const displayText = isSectionExpanded ? section.text : truncatedText
+                                        const isQuote = 'isQuote' in section && section.isQuote
+                                        return (
+                                            <>
+                                                <div className={`text-base md:text-lg leading-relaxed text-gray-700 ${isQuote ? 'italic' : ''}`}>
+                                                    {renderBioWithParagraphs(displayText)}
+                                                </div>
+                                                {isTruncated && (
+                                                    <button
+                                                        onClick={() => toggleSectionExpanded(key)}
+                                                        className="inline-block mt-4 text-[#c4342e] font-medium hover:underline"
+                                                    >
+                                                        {isSectionExpanded ? 'Show less' : 'Read more...'}
+                                                    </button>
+                                                )}
+                                            </>
+                                        )
+                                    })()}
+                                </div>
+                            </div>
+                        )}
                     </motion.div>
                 ))}
 
@@ -407,27 +455,6 @@ Isla, Class 3`,
                     )}
                 </motion.div>
 
-                {/* Partners Tab */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{
-                        opacity: activeTab === 'partners' ? 1 : 0,
-                        y: activeTab === 'partners' ? 0 : 20,
-                    }}
-                    transition={{ duration: 0.6 }}
-                    className={activeTab === 'partners' ? 'block' : 'hidden'}
-                >
-                    <div className="min-h-screen flex items-center justify-center">
-                        <div className="text-center">
-                            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 text-gray-800">
-                                Partners & Funders
-                            </h2>
-                            <p className="text-lg text-gray-600 mb-8">
-                                Logo section for partners and funders
-                            </p>
-                        </div>
-                    </div>
-                </motion.div>
             </div>
 
             <Footer />
