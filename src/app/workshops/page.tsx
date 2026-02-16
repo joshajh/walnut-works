@@ -37,7 +37,7 @@ export default function WorkshopsPage() {
 
               <div className="prose prose-gray max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Group workshops using Walnut Works kits are currently undertaken annually by Lauderdale House London in their schools project, artist Carole Griffiths at North Lights Studios, Craven College Yorkshire and MASS Sculpture, London.
+                  Group workshops using Walnut Works kits are currently undertaken annually by Lauderdale House, London in their schools project, artist Carole Griffiths at North Lights Studios, Craven College Yorkshire and MASS Sculpture, London.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                   This year we facilitated Orford Primary School and Woodbridge care homes using our kits, and previously Saffron Walden Museum.

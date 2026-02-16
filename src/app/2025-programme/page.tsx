@@ -48,6 +48,24 @@ export default function Programme2025Page() {
         })
     }
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (activeTab === 'partners') {
+                const sections = document.querySelectorAll('.scroll-section')
+                sections.forEach((section) => {
+                    const rect = section.getBoundingClientRect()
+                    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                        section.classList.add('in-view')
+                    } else {
+                        section.classList.remove('in-view')
+                    }
+                })
+            }
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [activeTab])
+
     const truncateBio = (bio: string, maxLength: number = 400) => {
         if (bio.length <= maxLength) return { text: bio, isTruncated: false }
         const truncated = bio.substring(0, maxLength)
@@ -113,14 +131,18 @@ The University of Suffolk Fine Art Students Katherine Kingston, Ella Chapman, Be
         },
         'care-homes': {
             title: 'Woodbridge Care Homes',
-            text: `It was an absolute joy working with care home residents and the Woodbridge community.
+            text: `It was key to work with Foteini Araka from Creative Mojo, who ran the workshops. Foteini's experience and established relationships with the participants were key to an enriching experience.
+
+It has been wonderful to work with the Woodbridge care homes - Cavell Manor Care Home, Haughgate House Care Home, Highlands Care Home, and the over 60s meeting group Woodbridge Chinwags.
+
+It was an absolute joy working with care home residents and the Woodbridge community.
 
 We had some really funny moments when creating the wax sculptures and as time went by I watched everyone's confidence grow, revealing great skills and imagination.
 
 I can't wait to see the finished artworks.
 
 Foteini Araka - Creative Mojo`,
-            isQuote: true,
+            isQuote: false,
             images: [
                 '/work/care-homes/edits/care-1-draft.png',
                 '/work/care-homes/edits/care-2-draft.png',
@@ -130,23 +152,36 @@ Foteini Araka - Creative Mojo`,
         },
         'orford-primary': {
             title: 'Orford Primary',
-            text: `Walnut Works have worked with diverse groups of people. Kabir has conducted workshops with partially sighted and blind people at Leeds City art gallery and the Sainsbury Centre for the Visual Arts, Norwich.
+            text: `The pupils at Orford had an amazing time creating wax sculptures based on the different topics and themes they had been learning about ranging from beaches, to the Romans and the Egyptians. The adults from Walnut Works were incredible and talked through the process to explain how the pieces would be taken away and cast in bronze.
 
-We felt that it would be important to work with a senior age group to build a link to the very young children at Orford Primary School. The wax to bronze workshops give an accessibility that allows for active participation and the satisfaction of solid permanent objects at the end.
+A member of staff said: "The children had a lovely afternoon and were able to use their creative skills. The children have said they really enjoyed the experience and felt it was good for your finger muscles."
 
-It was key to work with Foteini Araka from Creative Mojo, who ran the workshops. Foteini's experience and established relationships with the participants were key to an enriching experience.
+Pupils reported: "I can't wait to see what it looks like when it is bronze." "It was so good and we get to see them when I go up to year 1."
 
-It has been wonderful to work with the Woodbridge care homes - Cavell Manor Care Home, Haughgate House Care Home, Highlands Care Home, and the over 60s meeting group Woodbridge Chinwags.
+The staff at Orford primary also got the opportunity to create their own pieces. The staff loved the opportunity so much that many took the wax home for homework.
 
-Walnut Works also has a history of working in education. Vicky put together a project Hop Skip and Jump at Highgate primary school, Kings Lynn. We currently annually work with Lauderdale House, Highgate on the Cabinet of Curiosities project, an outreach programme doing Wax to Bronze workshops with four local secondary schools.
+"When I first heard about it, I got really excited. I learnt a technique to make it look furry. You could do lines on the sculpture with one of the tools. I found making the sculpture was really fun because I enjoyed making the wax into the right size and shapes for my bear. I'm excited to see my sculpture at the exhibition and all the other sculptures to see what they look like."
 
-We felt that it was important to introduce bronze workshops to young people and enjoyed very much working with Orford Primary School curriculum and varied age groups down to nursery. Truly a great experience.`,
+Isaac, Class 2
+
+"The two ladies were so nice and we had so much fun making the Egyptian sculptures out of wax. I am so excited to see what they look like when they are Bronzed. I made an Egyptian ankh that the God Ra holds."
+
+George, Class 3
+
+"I loved using the wax it was so much fun. I made an Egyptian cat sculpture and it will look like a real treasure when it is made into Bronze. I can't wait to see it. The bronze sculptures would be amazing in our school museum."
+
+Isla, Class 3`,
             images: [
                 '/work/school/edits/schools-1-draft.png',
                 '/work/school/edits/schools-2-draft.png',
                 '/work/school/edits/schools-3-draft.png',
                 '/work/school/edits/schools-4-draft.png',
             ],
+        },
+        'partners': {
+            title: 'Partners & Funders',
+            text: 'We are grateful to our partners and funders who have supported the 2025 Programme.',
+            images: [],
         },
     }
 
@@ -155,7 +190,7 @@ We felt that it was important to introduce bronze workshops to young people and 
             {/* Lightbox Modal */}
             {selectedImage && (
                 <div
-                    className="fixed inset-0 z-[100] bg-black flex items-center justify-center p-8"
+                    className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-8"
                     onClick={() => setSelectedImage(null)}
                 >
                     <button
@@ -218,6 +253,16 @@ We felt that it was important to introduce bronze workshops to young people and 
                             }`}
                         >
                             Orford Primary
+                        </button>
+                        <button
+                            onClick={() => setActiveTab('partners')}
+                            className={`px-3 md:px-6 py-2 font-serif text-sm md:text-lg whitespace-nowrap transition-all duration-300 ${
+                                activeTab === 'partners'
+                                    ? 'border-b-2 border-[#c4342e] text-[#c4342e]'
+                                    : 'text-gray-600 hover:text-gray-800'
+                            }`}
+                        >
+                            Partners
                         </button>
                     </div>
                 }
@@ -302,9 +347,7 @@ We felt that it was important to introduce bronze workshops to young people and 
                     ) : (
                         <div className="space-y-12">
                             {artists.map((artist, index) => {
-                                const isExpanded = expandedArtists.has(artist.id)
                                 const { text: truncatedText, isTruncated } = truncateBio(artist.bio)
-                                const displayText = isExpanded ? artist.bio : truncatedText
 
                                 return (
                                     <motion.article
@@ -330,19 +373,11 @@ We felt that it was important to introduce bronze workshops to young people and 
                                                     </h2>
                                                 </Link>
                                                 <div className="text-gray-700 leading-relaxed">
-                                                    {renderBioWithParagraphs(displayText)}
+                                                    {renderBioWithParagraphs(truncatedText)}
                                                 </div>
-                                                {isTruncated && (
-                                                    <button
-                                                        onClick={(e) => toggleExpanded(artist.id, e)}
-                                                        className="inline-block mt-3 text-[#c4342e] font-medium hover:underline"
-                                                    >
-                                                        {isExpanded ? 'Show less' : 'Read more...'}
-                                                    </button>
-                                                )}
                                                 <Link
                                                     href={`/artists/${artist.slug}`}
-                                                    className="inline-block mt-4 ml-4 text-[#c4342e] font-medium hover:underline"
+                                                    className="inline-block mt-4 text-[#c4342e] font-medium hover:underline"
                                                 >
                                                     View profile →
                                                 </Link>
@@ -353,6 +388,28 @@ We felt that it was important to introduce bronze workshops to young people and 
                             })}
                         </div>
                     )}
+                </motion.div>
+
+                {/* Partners Tab */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{
+                        opacity: activeTab === 'partners' ? 1 : 0,
+                        y: activeTab === 'partners' ? 0 : 20,
+                    }}
+                    transition={{ duration: 0.6 }}
+                    className={activeTab === 'partners' ? 'block' : 'hidden'}
+                >
+                    <div className="min-h-screen flex items-center justify-center">
+                        <div className="text-center">
+                            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 text-gray-800">
+                                Partners & Funders
+                            </h2>
+                            <p className="text-lg text-gray-600 mb-8">
+                                Logo section for partners and funders
+                            </p>
+                        </div>
+                    </div>
                 </motion.div>
             </div>
 

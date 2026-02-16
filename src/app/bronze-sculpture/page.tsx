@@ -317,9 +317,6 @@ export default function BronzeSculpture() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-serif font-normal mb-8">
-              Preserving a Living Tradition
-            </h2>
             <p className="text-lg leading-relaxed mb-6 text-gray-800">
               Artist tutors from the 40's, 50's, and 60's have influenced the last decades of the 20th century and have in turn influenced modern bronze sculptors such as Gavin Turk, Anish Kapoor, Grayson Perry, Antony Gormley, Anya Gallaccio, Louise Bourgeois to name a few.
             </p>
@@ -345,6 +342,15 @@ export default function BronzeSculpture() {
           >
             <p className="text-gray-600 text-center px-8 font-serif">Fig. 9 - Contemporary bronze sculpture</p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Credit */}
+      <section className="py-8 px-4 md:px-8 pb-24">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-sm text-gray-600 italic text-center">
+            Text and illustrations by V Hussain.
+          </p>
         </div>
       </section>
 

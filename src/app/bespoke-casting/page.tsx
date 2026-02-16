@@ -65,6 +65,15 @@ export default function BespokeCastingPage() {
                 </div>
             </section>
 
+            {/* Credit */}
+            <section className="py-8 px-4 md:px-8 pb-24">
+                <div className="max-w-6xl mx-auto">
+                    <p className="text-sm text-gray-600 italic text-center">
+                        Sculptures cast by K Hussain
+                    </p>
+                </div>
+            </section>
+
             <Footer />
         </div>
     )

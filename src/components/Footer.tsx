@@ -69,25 +69,21 @@ export default function Footer() {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.2, duration: 0.6 }}
                                 >
-                                    <h1 className="text-5xl md:text-7xl font-serif font-normal mb-12">
-                                        Visit Us
-                                    </h1>
-
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                                         <div>
                                             <h2 className="text-2xl font-serif font-normal mb-6">
                                                 Location
                                             </h2>
                                             <address className="not-italic text-lg text-gray-700 leading-relaxed">
-                                                Butley Mills Studio
+                                                Walnut Works
                                                 <br />
-                                                Butley
+                                                Butley Mills Studios
                                                 <br />
                                                 Woodbridge
                                                 <br />
                                                 Suffolk
                                                 <br />
-                                                IP12 3NR
+                                                IP12 3PZ
                                                 <br />
                                                 United Kingdom
                                             </address>
@@ -114,15 +110,8 @@ export default function Footer() {
                                         <h2 className="text-2xl font-serif font-normal mb-6">
                                             Getting Here
                                         </h2>
-                                        <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                                            We're located in the beautiful Suffolk countryside,
-                                            approximately 10 miles northeast of Ipswich and 2 miles
-                                            from Woodbridge town centre.
-                                        </p>
                                         <p className="text-lg text-gray-700 leading-relaxed">
-                                            Free parking is available on-site. The nearest train
-                                            station is Woodbridge, with regular services to Ipswich
-                                            and London Liverpool Street.
+                                            Approximately 16 miles from Ipswich and 8 miles from Woodbridge town centre.
                                         </p>
                                     </div>
                                 </motion.div>

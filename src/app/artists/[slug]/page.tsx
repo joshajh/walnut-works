@@ -38,10 +38,22 @@ export default function ArtistDetailPage({
   const { slug } = use(params);
   const [artist, setArtist] = useState<Artist | null>(null);
   const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     fetchArtist();
   }, [slug]);
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && selectedImage) {
+        setSelectedImage(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [selectedImage]);
 
   const fetchArtist = async () => {
     try {
@@ -80,6 +92,28 @@ export default function ArtistDetailPage({
 
   return (
     <div className="min-h-screen bg-[#F0EEDE] noise-bg pb-24">
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-8"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-6 right-6 text-white hover:opacity-60 transition-opacity text-4xl z-10"
+            aria-label="Close lightbox"
+          >
+            ×
+          </button>
+          <img
+            src={selectedImage}
+            alt="Full size artwork"
+            className="max-w-full max-h-full object-contain relative z-10"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+
       <Navigation />
 
       <article className="pt-32 px-4 md:px-12 max-w-7xl mx-auto">
@@ -176,11 +210,14 @@ export default function ArtistDetailPage({
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     className="overflow-hidden"
                   >
-                    <div className="aspect-square overflow-hidden flex items-center justify-center">
+                    <div
+                      className="aspect-square overflow-hidden flex items-center justify-center cursor-pointer group"
+                      onClick={() => setSelectedImage(artwork.image_url)}
+                    >
                       <img
                         src={artwork.image_url}
                         alt={artwork.title}
-                        className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-500"
+                        className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                   </motion.div>
