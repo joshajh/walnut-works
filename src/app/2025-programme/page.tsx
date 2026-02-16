@@ -127,7 +127,24 @@ We met Clare Jarrett on the Mass Sculpture programme, there was deep interest by
 Juliet Lockhart was selected from the workshop run with the University of Suffolk. We were struck that her objects sought to convey a great sense of narrative. Juliet's work focuses on the seventeenth century painter Mary Beale. The work manifests itself through puppets made of cardboard, stitching and papier mache. We found Juliet's aspirations to combine bronze and cloth fascinating.
 
 The University of Suffolk Fine Art Students Katherine Kingston, Ella Chapman, Belinda Downing and Gemma Upson have works created during the workshop and they are part of the Walnut Works show.`,
-            images: Array(16).fill('/foundry.webp'),
+            images: [
+                '/work/artists-in-residence/edits/clare-jarrett-1.png',
+                '/work/artists-in-residence/edits/clare-jarrett-2.png',
+                '/work/artists-in-residence/edits/clare-jarrett-3.png',
+                '/work/artists-in-residence/edits/denise-1.png',
+                '/work/artists-in-residence/edits/denise-2.png',
+                '/work/artists-in-residence/edits/denise-3.png',
+                '/work/artists-in-residence/edits/julie-lockhart-1.png',
+                '/work/artists-in-residence/edits/julie-lockhart-2.png',
+                '/work/artists-in-residence/edits/julie-lockhart-3.png',
+                '/work/artists-in-residence/edits/laura-wilson.png',
+                '/work/school/edits/schools-1-draft.png',
+                '/work/school/edits/schools-2-draft.png',
+                '/work/school/edits/schools-3-draft.png',
+                '/work/care-homes/edits/care-1-draft.png',
+                '/work/care-homes/edits/care-4-draft.png',
+                '/work/care-homes/edits/care-3-draft.png',
+            ],
         },
         'care-homes': {
             title: 'Woodbridge Care Homes',

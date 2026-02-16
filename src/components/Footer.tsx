@@ -152,7 +152,15 @@ export default function Footer() {
                                     className="text-xs text-gray-600 hidden md:inline"
                                     style={{ letterSpacing: '0.08em', fontWeight: 400 }}
                                 >
-                                    Design and development by Possible Worlds
+                                    Design and development by{' '}
+                                    <a
+                                        href="https://possibleworlds.space"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:text-[#c4342e] transition-colors underline"
+                                    >
+                                        Possible Worlds
+                                    </a>
                                 </motion.span>
                             )}
                         </AnimatePresence>

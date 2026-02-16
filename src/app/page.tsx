@@ -292,6 +292,15 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* Image Credits */}
+            <section className="py-8 px-4 md:px-6 pb-24">
+                <div className="max-w-6xl mx-auto">
+                    <p className="text-xs text-gray-600 text-center">
+                        Image credits: Denise de Cordova, Laura Wilson, Juliet Lockhart, Clare Jarrett, Kabir Hussain.
+                    </p>
+                </div>
+            </section>
+
             {/* Footer */}
             <Footer />
         </div>
