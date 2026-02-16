@@ -300,7 +300,7 @@ Isla, Class 3`,
                     >
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-20 items-start">
                             {/* Left column: Image Grid */}
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-2 md:max-h-[calc(100vh-250px)] overflow-y-auto scrollbar-hide pr-0 md:pr-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                            <div className={`grid gap-2 md:gap-2 md:max-h-[calc(100vh-250px)] overflow-y-auto scrollbar-hide pr-0 md:pr-4 ${section.images.length <= 4 ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-4'}`} style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                                 {section.images.map((img, index) => (
                                     <div
                                         key={index}
