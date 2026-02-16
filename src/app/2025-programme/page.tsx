@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { motion } from 'framer-motion'
@@ -222,12 +223,14 @@ Isla, Class 3`,
                     >
                         ×
                     </button>
-                    <img
-                        src={selectedImage}
-                        alt="Full size"
-                        className="max-w-full max-h-full object-contain relative z-10"
-                        onClick={(e) => e.stopPropagation()}
-                    />
+                    <div className="relative max-w-full max-h-full z-10" onClick={(e) => e.stopPropagation()}>
+                        <Image
+                            src={selectedImage}
+                            alt="Full size"
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
                 </div>
             )}
 
@@ -318,11 +321,12 @@ Isla, Class 3`,
                                 {/* Logos below */}
                                 <div className="space-y-3">
                                     {/* First row: ACE logo full width */}
-                                    <div className="w-full aspect-[4/1] flex items-center justify-center cursor-pointer group" onClick={() => setSelectedImage(section.images[0])}>
-                                        <img
+                                    <div className="w-full aspect-[4/1] relative cursor-pointer group" onClick={() => setSelectedImage(section.images[0])}>
+                                        <Image
                                             src={section.images[0]}
                                             alt="Arts Council England"
-                                            className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 group-hover:scale-105 transition-all duration-300"
+                                            fill
+                                            className="object-contain grayscale hover:grayscale-0 group-hover:scale-105 transition-all duration-300"
                                         />
                                     </div>
                                     {/* Second row: Other four logos */}
@@ -330,13 +334,14 @@ Isla, Class 3`,
                                         {section.images.slice(1).map((img, index) => (
                                             <div
                                                 key={index + 1}
-                                                className="aspect-[4/3] relative flex items-center justify-center cursor-pointer group"
+                                                className="aspect-[4/3] relative cursor-pointer group"
                                                 onClick={() => setSelectedImage(img)}
                                             >
-                                                <img
+                                                <Image
                                                     src={img}
                                                     alt={`Partner ${index + 2}`}
-                                                    className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 group-hover:scale-105 transition-all duration-300"
+                                                    fill
+                                                    className="object-contain grayscale hover:grayscale-0 group-hover:scale-105 transition-all duration-300"
                                                 />
                                             </div>
                                         ))}
@@ -351,13 +356,14 @@ Isla, Class 3`,
                                     {section.images.map((img, index) => (
                                         <div
                                             key={index}
-                                            className="aspect-square relative flex items-center justify-center cursor-pointer group"
+                                            className="aspect-square relative cursor-pointer group"
                                             onClick={() => setSelectedImage(img)}
                                         >
-                                            <img
+                                            <Image
                                                 src={img}
                                                 alt={`${section.title} ${index + 1}`}
-                                                className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                                                fill
+                                                className="object-contain group-hover:scale-105 transition-transform duration-300"
                                             />
                                         </div>
                                     ))}
@@ -424,10 +430,11 @@ Isla, Class 3`,
                                         <div className="block md:flex gap-8 items-start">
                                             {artist.profile_image_url && (
                                                 <Link href={`/artists/${artist.slug}`} className="block md:w-2/5 aspect-[4/3] overflow-hidden relative mb-6 md:mb-0 group">
-                                                    <img
+                                                    <Image
                                                         src={artist.profile_image_url}
                                                         alt={artist.name}
-                                                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                                                        fill
+                                                        className="object-contain group-hover:scale-105 transition-transform duration-500"
                                                     />
                                                 </Link>
                                             )}

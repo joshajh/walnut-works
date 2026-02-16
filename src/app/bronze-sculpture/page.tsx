@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -78,25 +79,31 @@ export default function BronzeSculpture() {
 
       {/* Image Placeholders: Fire and Copper + Tin = Bronze */}
       <section className="py-12 px-4 md:px-8 bg-stone-100">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="aspect-square bg-gray-300 flex items-center justify-center"
+              className="flex flex-col items-center"
             >
-              <p className="text-gray-600 text-center px-8 font-serif">Fig. 1 - Fire</p>
+              <div className="aspect-[4/3] w-full relative mb-4">
+                <Image src="/history-figs-trans/history-figs-1.png" alt="Fire" fill className="object-contain brightness-75 contrast-150" />
+              </div>
+              <p className="text-gray-600 text-center font-serif">Fig. 1 - Fire</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="aspect-square bg-gray-300 flex items-center justify-center"
+              className="flex flex-col items-center"
             >
-              <p className="text-gray-600 text-center px-8 font-serif">Fig. 2 - Copper + Tin = Bronze</p>
+              <div className="aspect-[4/3] w-full relative mb-4">
+                <Image src="/history-figs-trans/history-figs-2.png" alt="Copper + Tin = Bronze" fill className="object-contain brightness-75 contrast-150" />
+              </div>
+              <p className="text-gray-600 text-center font-serif">Fig. 2 - Copper + Tin = Bronze</p>
             </motion.div>
           </div>
         </div>
@@ -151,15 +158,18 @@ export default function BronzeSculpture() {
 
       {/* Image Placeholders: Ancient Sculptures */}
       <section className="py-12 px-4 md:px-8">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="aspect-[3/4] bg-gray-300 flex items-center justify-center"
+              className="flex flex-col items-center"
             >
+              <div className="aspect-[4/3] w-full relative mb-4">
+                <Image src="/history-figs-trans/history-figs-3.png" alt="Female sculpture, Mohenjo-daro" fill className="object-contain brightness-75 contrast-150" />
+              </div>
               <p className="text-gray-600 text-center px-8 font-serif">Fig. 3 - Female sculpture, Mohenjo-daro</p>
             </motion.div>
             <motion.div
@@ -167,8 +177,11 @@ export default function BronzeSculpture() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="aspect-[3/4] bg-gray-300 flex items-center justify-center"
+              className="flex flex-col items-center"
             >
+              <div className="aspect-[4/3] w-full relative mb-4">
+                <Image src="/history-figs-trans/history-figs-hadrian.png" alt="The bust of the emperor Hadrian, found in 1853 in the Thames" fill className="object-contain brightness-75 contrast-150" />
+              </div>
               <p className="text-gray-600 text-center px-8 font-serif">Fig. 4 - The bust of the emperor Hadrian, found in 1853 in the Thames</p>
             </motion.div>
           </div>
@@ -202,15 +215,18 @@ export default function BronzeSculpture() {
 
       {/* Image Placeholders: Crusaders and Renaissance */}
       <section className="py-12 px-8 bg-stone-100">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="aspect-[4/3] bg-gray-300 flex items-center justify-center"
+              className="flex flex-col items-center"
             >
+              <div className="aspect-[4/3] w-full relative mb-4">
+                <Image src="/history-figs-trans/history-figs-4.png" alt="Crusader ship" fill className="object-contain brightness-75 contrast-150" />
+              </div>
               <p className="text-gray-600 text-center px-8 font-serif">Fig. 5 - Crusader ship</p>
             </motion.div>
             <motion.div
@@ -218,8 +234,11 @@ export default function BronzeSculpture() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="aspect-[4/3] bg-gray-300 flex items-center justify-center"
+              className="flex flex-col items-center"
             >
+              <div className="aspect-[4/3] w-full relative mb-4">
+                <Image src="/history-figs-trans/history-figs-5.png" alt="Duke Cosimo I commissioning Cellini's 'Perseus and Medusa'" fill className="object-contain brightness-75 contrast-150" />
+              </div>
               <p className="text-gray-600 text-center px-8 font-serif">Fig. 6 - Duke Cosimo I commissioning Cellini's 'Perseus and Medusa'</p>
             </motion.div>
           </div>
@@ -256,15 +275,18 @@ export default function BronzeSculpture() {
 
       {/* Image Placeholders: Victorian Era */}
       <section className="py-12 px-8 bg-stone-100">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="aspect-[3/4] bg-gray-300 flex items-center justify-center"
+              className="flex flex-col items-center"
             >
+              <div className="aspect-[4/3] w-full relative mb-4">
+                <Image src="/history-figs-trans/history-figs-7.png" alt="Queen Victoria" fill className="object-contain brightness-75 contrast-150" />
+              </div>
               <p className="text-gray-600 text-center px-8 font-serif">Fig. 7 - Queen Victoria</p>
             </motion.div>
             <motion.div
@@ -272,8 +294,11 @@ export default function BronzeSculpture() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="aspect-[3/4] bg-gray-300 flex items-center justify-center"
+              className="flex flex-col items-center"
             >
+              <div className="aspect-[4/3] w-full relative mb-4">
+                <Image src="/history-figs-trans/history-figs-8.png" alt="Toppling Colston" fill className="object-contain brightness-75 contrast-150" />
+              </div>
               <p className="text-gray-600 text-center px-8 font-serif">Fig. 8 - Toppling Colston</p>
             </motion.div>
           </div>
@@ -332,14 +357,17 @@ export default function BronzeSculpture() {
 
       {/* Closing Image */}
       <section className="py-12 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="aspect-[4/3] bg-gray-300 flex items-center justify-center"
+            className="flex flex-col items-center"
           >
+            <div className="aspect-[4/3] w-full relative mb-4">
+              <img src="/history-figs-trans/history-figs-6.png" alt="Contemporary bronze sculpture" fill className="object-contain brightness-75 contrast-150" />
+            </div>
             <p className="text-gray-600 text-center px-8 font-serif">Fig. 9 - Contemporary bronze sculpture</p>
           </motion.div>
         </div>

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { motion } from 'framer-motion'
@@ -61,11 +62,14 @@ export default function CastingProcess() {
                         viewport={{ once: true }}
                         className="aspect-[4/3] flex flex-col items-center justify-center"
                     >
-                        <img
-                            src="/process-figs/process-1.png"
-                            alt="Kit bags arrive at the studio"
-                            className="w-full h-full object-cover"
-                        />
+                        <div className="relative w-full h-full">
+                            <Image
+                                src="/process-figs/process-1.png"
+                                alt="Kit bags arrive at the studio"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
                         <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                             Kit bags arrive at the studio, and are labelled with the artist's details.
                         </p>
@@ -83,11 +87,14 @@ export default function CastingProcess() {
                         viewport={{ once: true }}
                         className="aspect-[4/3] flex flex-col items-center justify-center"
                     >
-                        <img
-                            src="/process-figs/process-2.png"
-                            alt="Runners and risers"
-                            className="w-full h-full object-cover"
-                        />
+                        <div className="relative w-full h-full">
+                            <Image
+                                src="/process-figs/process-2.png"
+                                alt="Runners and risers"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
                         <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                             We roll out runners (thick ones) and risers (thin ones). The thick ones will leave a wide gap in the mould after it's been fired in the kiln for the metal to flow. The thin ones leave a space for the air to escape.
                         </p>
@@ -106,11 +113,14 @@ export default function CastingProcess() {
                             viewport={{ once: true }}
                             className="aspect-square flex flex-col items-center justify-center"
                         >
-                            <img
-                                src="/process-figs/process-3.png"
-                                alt="Brushing the first coat"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/process-figs/process-3.png"
+                                    alt="Brushing the first coat"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                             <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                                 Kabir brushes on the first coat of the mould; a mixture of herculite plaster and fine casting plaster. This coat has to be very strong to pick up the details on the wax.
                             </p>
@@ -122,11 +132,14 @@ export default function CastingProcess() {
                             viewport={{ once: true }}
                             className="aspect-square flex flex-col items-center justify-center"
                         >
-                            <img
-                                src="/process-figs/process-4.png"
-                                alt="A mix of plaster and water"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/process-figs/process-4.png"
+                                    alt="A mix of plaster and water"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                             <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                                 A mix of plaster and water to make the mould.
                             </p>
@@ -146,11 +159,14 @@ export default function CastingProcess() {
                             viewport={{ once: true }}
                             className="aspect-[3/4] flex flex-col items-center justify-center"
                         >
-                            <img
-                                src="/process-figs/process-5.png"
-                                alt="Crushing waste plaster"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/process-figs/process-5.png"
+                                    alt="Crushing waste plaster"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                             <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                                 To make a plaster for the second coat of the mould, Vicky is crushing waste plaster from the fired broken moulds.
                             </p>
@@ -162,11 +178,14 @@ export default function CastingProcess() {
                             viewport={{ once: true }}
                             className="aspect-[3/4] flex flex-col items-center justify-center"
                         >
-                            <img
-                                src="/process-figs/process-7.png"
-                                alt="Building up the second layer"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/process-figs/process-7.png"
+                                    alt="Building up the second layer"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                             <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                                 Kabir builds up the second layer of two parts luto to one part fine casting plaster.
                             </p>
@@ -186,11 +205,14 @@ export default function CastingProcess() {
                             viewport={{ once: true }}
                             className="aspect-square flex flex-col items-center justify-center"
                         >
-                            <img
-                                src="/process-figs/process-8.png"
-                                alt="Taking finished moulds to the kiln"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/process-figs/process-8.png"
+                                    alt="Taking finished moulds to the kiln"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                             <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                                 We take the finished moulds to the foundry kiln.
                             </p>
@@ -202,11 +224,14 @@ export default function CastingProcess() {
                             viewport={{ once: true }}
                             className="aspect-square flex flex-col items-center justify-center"
                         >
-                            <img
-                                src="/process-figs/process-9.png"
-                                alt="Five days of firing"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/process-figs/process-9.png"
+                                    alt="Five days of firing"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                             <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                                 Kabir puts the moulds into the kiln to fire for five days. The wax burns out to leave a space to pour the hot metal.
                             </p>
@@ -225,11 +250,14 @@ export default function CastingProcess() {
                         viewport={{ once: true }}
                         className="aspect-[4/3] flex flex-col items-center justify-center"
                     >
-                        <img
-                            src="/process-figs/process-10.png"
-                            alt="Wrapping scrim around warm moulds"
-                            className="w-full h-full object-cover"
-                        />
+                        <div className="relative w-full h-full">
+                            <Image
+                                src="/process-figs/process-10.png"
+                                alt="Wrapping scrim around warm moulds"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
                         <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                             The moulds are cooked and still warm from the kiln. The wax has melted away and the mould is fragile. Kabir wraps some scrim dipped in plaster around the moulds to strengthen them for the hot metal.
                         </p>
@@ -248,11 +276,14 @@ export default function CastingProcess() {
                             viewport={{ once: true }}
                             className="aspect-[3/4] flex flex-col items-center justify-center"
                         >
-                            <img
-                                src="/process-figs/process-11.png"
-                                alt="Bronze ingots heating in the furnace"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/process-figs/process-11.png"
+                                    alt="Bronze ingots heating in the furnace"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                             <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                                 Meanwhile the bronze ingots are being heated up in the furnace.
                             </p>
@@ -264,11 +295,14 @@ export default function CastingProcess() {
                             viewport={{ once: true }}
                             className="aspect-[3/4] flex flex-col items-center justify-center"
                         >
-                            <img
-                                src="/process-figs/process-12.png"
-                                alt="Molten metal ready to pour"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/process-figs/process-12.png"
+                                    alt="Molten metal ready to pour"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                             <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                                 The bronze is heated up to 1080 degrees Celsius.
                             </p>
@@ -287,11 +321,14 @@ export default function CastingProcess() {
                         viewport={{ once: true }}
                         className="aspect-[4/3] flex flex-col items-center justify-center"
                     >
-                        <img
-                            src="/process-figs/process-13.png"
-                            alt="The melted metal ready to be poured"
-                            className="w-full h-full object-cover"
-                        />
+                        <div className="relative w-full h-full">
+                            <Image
+                                src="/process-figs/process-13.png"
+                                alt="The melted metal ready to be poured"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
                         <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                             The melted metal ready to be poured into the moulds.
                         </p>
@@ -310,11 +347,14 @@ export default function CastingProcess() {
                             viewport={{ once: true }}
                             className="aspect-[4/3] flex flex-col items-center justify-center"
                         >
-                            <img
-                                src="/process-figs/process-14.jpg"
-                                alt="Breaking the mould with an axe"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/process-figs/process-14.jpg"
+                                    alt="Breaking the mould with an axe"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                             <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                                 The moulds have cooled down and an axe is used to break the mould and find the bronze.
                             </p>
@@ -326,11 +366,14 @@ export default function CastingProcess() {
                             viewport={{ once: true }}
                             className="aspect-[4/3] flex flex-col items-center justify-center"
                         >
-                            <img
-                                src="/process-figs/process-15.jpg"
-                                alt="The sculpture emerges"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/process-figs/process-15.jpg"
+                                    alt="The sculpture emerges"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                             <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                                 When the plaster is washed off the bronze. The runners and risers of sprue system are left with the small bronze sculpture attached.
                             </p>
@@ -350,11 +393,14 @@ export default function CastingProcess() {
                             viewport={{ once: true }}
                             className="aspect-square flex flex-col items-center justify-center"
                         >
-                            <img
-                                src="/process-figs/process-16.png"
-                                alt="Fettling process 1"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/process-figs/process-16.png"
+                                    alt="Fettling process 1"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
@@ -363,11 +409,14 @@ export default function CastingProcess() {
                             viewport={{ once: true }}
                             className="aspect-square flex flex-col items-center justify-center"
                         >
-                            <img
-                                src="/process-figs/process-17.png"
-                                alt="Fettling process 2"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/process-figs/process-17.png"
+                                    alt="Fettling process 2"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
@@ -376,11 +425,14 @@ export default function CastingProcess() {
                             viewport={{ once: true }}
                             className="aspect-square flex flex-col items-center justify-center"
                         >
-                            <img
-                                src="/process-figs/process-18.jpg"
-                                alt="Fettling process 3"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/process-figs/process-18.jpg"
+                                    alt="Fettling process 3"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                         </motion.div>
                     </div>
                     <p className="text-gray-700 text-center px-4 font-serif text-sm mt-6">
@@ -400,11 +452,14 @@ export default function CastingProcess() {
                             viewport={{ once: true }}
                             className="aspect-[3/4] flex flex-col items-center justify-center"
                         >
-                            <img
-                                src="/process-figs/process-20.png"
-                                alt="Applying chemicals to create the patina"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/process-figs/process-20.png"
+                                    alt="Applying chemicals to create the patina"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                             <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                                 Patination. Using chemicals to burn a colour the metal.
                             </p>
@@ -416,11 +471,14 @@ export default function CastingProcess() {
                             viewport={{ once: true }}
                             className="aspect-[3/4] flex flex-col items-center justify-center"
                         >
-                            <img
-                                src="/process-figs/process-22.jpg"
-                                alt="The finished bronze sculptures"
-                                className="w-full h-full object-cover"
-                            />
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/process-figs/process-22.jpg"
+                                    alt="The finished bronze sculptures"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                             <p className="text-gray-700 text-center px-4 font-serif text-sm mt-4">
                                 The finished small bronze sculptures.
                             </p>
