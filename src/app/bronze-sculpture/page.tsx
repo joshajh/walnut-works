@@ -366,7 +366,7 @@ export default function BronzeSculpture() {
             className="flex flex-col items-center"
           >
             <div className="aspect-[4/3] w-full relative mb-4">
-              <img src="/history-figs-trans/history-figs-6.png" alt="Contemporary bronze sculpture" fill className="object-contain brightness-75 contrast-150" />
+              <Image src="/history-figs-trans/history-figs-6.png" alt="Contemporary bronze sculpture" fill className="object-contain brightness-75 contrast-150" />
             </div>
             <p className="text-gray-600 text-center px-8 font-serif">Fig. 9 - Contemporary bronze sculpture</p>
           </motion.div>

@@ -223,14 +223,12 @@ Isla, Class 3`,
                     >
                         ×
                     </button>
-                    <div className="relative max-w-full max-h-full z-10" onClick={(e) => e.stopPropagation()}>
-                        <Image
-                            src={selectedImage}
-                            alt="Full size"
-                            fill
-                            className="object-contain"
-                        />
-                    </div>
+                    <img
+                        src={selectedImage}
+                        alt="Full size"
+                        className="max-w-full max-h-full object-contain relative z-10"
+                        onClick={(e) => e.stopPropagation()}
+                    />
                 </div>
             )}
 
