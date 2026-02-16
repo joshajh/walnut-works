@@ -305,20 +305,20 @@ Isla, Class 3`,
                     >
                         {key === 'partners' ? (
                             /* Partners Section - Centered layout */
-                            <div className="max-w-4xl mx-auto">
+                            <div className="max-w-3xl mx-auto">
                                 {/* Text first */}
-                                <div className="mb-8 md:mb-12 text-center">
-                                    <h2 className="text-2xl md:text-4xl font-serif font-bold mb-4 md:mb-6 text-gray-800">
+                                <div className="mb-6 md:mb-8 text-center">
+                                    <h2 className="text-2xl md:text-3xl font-serif font-bold mb-3 md:mb-4 text-gray-800">
                                         {section.title}
                                     </h2>
-                                    <div className="text-base md:text-lg leading-relaxed text-gray-700">
+                                    <div className="text-sm md:text-base leading-relaxed text-gray-700">
                                         {renderBioWithParagraphs(section.text)}
                                     </div>
                                 </div>
                                 {/* Logos below */}
-                                <div className="space-y-4">
+                                <div className="space-y-3">
                                     {/* First row: ACE logo full width */}
-                                    <div className="w-full aspect-[3/1] flex items-center justify-center cursor-pointer group" onClick={() => setSelectedImage(section.images[0])}>
+                                    <div className="w-full aspect-[4/1] flex items-center justify-center cursor-pointer group" onClick={() => setSelectedImage(section.images[0])}>
                                         <img
                                             src={section.images[0]}
                                             alt="Arts Council England"
@@ -326,11 +326,11 @@ Isla, Class 3`,
                                         />
                                     </div>
                                     {/* Second row: Other four logos */}
-                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
                                         {section.images.slice(1).map((img, index) => (
                                             <div
                                                 key={index + 1}
-                                                className="aspect-square relative flex items-center justify-center cursor-pointer group"
+                                                className="aspect-[4/3] relative flex items-center justify-center cursor-pointer group"
                                                 onClick={() => setSelectedImage(img)}
                                             >
                                                 <img
