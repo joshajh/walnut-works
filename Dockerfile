@@ -33,8 +33,8 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
-# Copy the SQLite database (if it exists)
-COPY --from=builder /app/walnut-works.db ./walnut-works.db 2>/dev/null || true
+# Create empty database file (will be overwritten by volume mount in production)
+RUN touch ./walnut-works.db
 
 # Set proper permissions
 RUN chown -R nextjs:nodejs /app
