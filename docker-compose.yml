@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=production
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-your_secure_password_here}
+    volumes:
+      # Mount database to persist data
+      - ./walnut-works.db:/app/walnut-works.db
+    restart: unless-stopped
+    # No ports exposed - Dokploy's Traefik will handle routing
+    # For local testing, uncomment the following:
+    # ports:
+    #   - "3000:3000"
